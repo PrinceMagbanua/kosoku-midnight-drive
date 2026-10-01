@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dh213s1xxswwm"
+path="res://.godot/imported/Pedal Down - Night Circuit - Treblo.ogg-80e8c9de01af08200638208d4e4aee0b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Pedal Down - Night Circuit - Treblo.ogg"
+dest_files=["res://.godot/imported/Pedal Down - Night Circuit - Treblo.ogg-80e8c9de01af08200638208d4e4aee0b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

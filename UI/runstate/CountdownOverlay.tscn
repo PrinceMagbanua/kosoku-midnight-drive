@@ -1,0 +1,45 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/runstate/countdown_overlay.gd" id="1_overlay"]
+[ext_resource type="Shader" path="res://UI/runstate/countdown_band.gdshader" id="2_shader"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans-Bold.ttf" id="3_font"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_band"]
+shader = ExtResource("2_shader")
+shader_parameter/band_color = Color(1, 0.12, 0.08, 1)
+shader_parameter/intensity = 0.0
+
+[node name="CountdownOverlay" type="CanvasLayer"]
+layer = 6
+script = ExtResource("1_overlay")
+
+[node name="Band" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_band")
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 85.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="GoLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -80.0
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.15, 1, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 110
+text = "GO!"
+horizontal_alignment = 1
+vertical_alignment = 1

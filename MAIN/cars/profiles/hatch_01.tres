@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CarProfile" format=3 uid="uid://hnnm7u16baa7"]
+
+[ext_resource type="Script" uid="uid://dpngdj3jayytp" path="res://MAIN/cars/car_profile.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://c2pn4nddlo58j" path="res://assets/cars/Kosoku_Cars_GLB/cars/Hatch_01/Hatch_01_Base.glb" id="2_hull"]
+[ext_resource type="Script" uid="uid://cwu0qajodeldu" path="res://MAIN/cars/car_feel_config.gd" id="3_feel_script"]
+
+[sub_resource type="Resource" id="Resource_hatch_01_feel"]
+script = ExtResource("3_feel_script")
+
+[resource]
+script = ExtResource("1_script")
+id = "hatch_01"
+display_name = "KITSUNE"
+hull_scene = ExtResource("2_hull")
+manifest_id = "Hatch_01"
+default_paint = "PolygonStreetRacer_Texture_02_A.png"
+handling = 8
+braking = 6
+ground_trim = 0.1
+feel = SubResource("Resource_hatch_01_feel")

@@ -1,0 +1,357 @@
+[gd_scene format=3 uid="uid://b0cr30evra8gx"]
+
+[ext_resource type="Script" uid="uid://ch1q0j71r7tvt" path="res://UI/runstate/crash_overlay.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dtrmoujawfnog" path="res://theme/main_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://UI/runstate/ResultRow.tscn" id="3_row"]
+
+[sub_resource type="StyleBoxFlat" id="SB_grade"]
+bg_color = Color(0.098, 0.098, 0.098, 0.55)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.945, 0.973, 0.988, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_btn"]
+content_margin_left = 22.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.098, 0.098, 0.098, 0.55)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.945, 0.973, 0.988, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_hover"]
+content_margin_left = 22.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.945, 0.973, 0.988, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.945, 0.973, 0.988, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_primary"]
+content_margin_left = 22.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.098, 0.098, 0.098, 0.55)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_primary_hover"]
+content_margin_left = 22.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="SB_btn_focus"]
+
+[node name="CrashOverlay" type="CanvasLayer"]
+layer = 7
+script = ExtResource("1")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("2_theme")
+
+[node name="Background" type="ColorRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25)
+
+[node name="TitleSlot" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 30.0
+offset_right = 640.0
+offset_bottom = 98.0
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Root/TitleSlot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"GarageTitle"
+theme_override_colors/font_color = Color(1, 0, 0.502, 1)
+theme_override_font_sizes/font_size = 56
+text = "CRASHED"
+vertical_alignment = 1
+
+[node name="CauseSlot" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 59.0
+offset_top = 98.0
+offset_right = 640.0
+offset_bottom = 146.0
+mouse_filter = 2
+
+[node name="CauseBlock" type="VBoxContainer" parent="Root/CauseSlot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="CauseLabel" type="Label" parent="Root/CauseSlot/CauseBlock"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GarageTitle"
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 1)
+theme_override_font_sizes/font_size = 18
+text = "CAR TOTALED"
+
+[node name="ReasonLabel" type="Label" parent="Root/CauseSlot/CauseBlock"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 0.75)
+theme_override_font_sizes/font_size = 13
+text = "Hit by another vehicle"
+
+[node name="GradeSlot" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -236.0
+offset_top = 34.0
+offset_right = -56.0
+offset_bottom = 130.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="GradeBox" type="Panel" parent="Root/GradeSlot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("SB_grade")
+
+[node name="GradeCaption" type="Label" parent="Root/GradeSlot/GradeBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.45
+anchor_bottom = 1.0
+offset_left = 16.0
+grow_vertical = 2
+theme_type_variation = &"SectionCatLabel"
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 0.75)
+theme_override_font_sizes/font_size = 11
+text = "GRADE"
+vertical_alignment = 1
+
+[node name="GradeLetter" type="Label" parent="Root/GradeSlot/GradeBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"GarageTitle"
+theme_override_colors/font_color = Color(1, 0, 0.502, 1)
+theme_override_font_sizes/font_size = 60
+text = "F-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Table" type="VBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 162.0
+offset_right = 360.0
+offset_bottom = 490.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Header" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+kind = 1
+
+[node name="TopSpeedRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "TOP SPEED"
+
+[node name="DriftRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "DRIFTING"
+from_right = true
+
+[node name="SlipstreamRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "SLIPSTREAM"
+
+[node name="NearMissRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "NEAR MISS"
+from_right = true
+
+[node name="OvertakeRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "OVERTAKES"
+
+[node name="OtherRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "OTHER"
+from_right = true
+
+[node name="DistanceRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "DISTANCE"
+
+[node name="TimeRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "TIME"
+from_right = true
+
+[node name="TotalRow" parent="Root/Table" instance=ExtResource("3_row")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+title = "TOTAL"
+kind = 2
+
+[node name="FooterSlot" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 506.0
+offset_right = -20.0
+offset_bottom = 560.0
+mouse_filter = 2
+
+[node name="Footer" type="VBoxContainer" parent="Root/FooterSlot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="BestLabel" type="Label" parent="Root/FooterSlot/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 0.75)
+theme_override_font_sizes/font_size = 11
+text = "BEST 0"
+
+[node name="CashLabel" type="Label" parent="Root/FooterSlot/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CreditAmount"
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "$0 TOTAL"
+
+[node name="ButtonsSlot" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 508.0
+offset_right = 360.0
+offset_bottom = 550.0
+mouse_filter = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Root/ButtonsSlot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="GarageButton" type="Button" parent="Root/ButtonsSlot/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"BackWideButton"
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 1)
+theme_override_colors/font_hover_color = Color(0.098, 0.098, 0.098, 1)
+theme_override_colors/font_pressed_color = Color(0.098, 0.098, 0.098, 1)
+theme_override_colors/font_focus_color = Color(0.945, 0.973, 0.988, 1)
+theme_override_styles/normal = SubResource("SB_btn")
+theme_override_styles/hover = SubResource("SB_btn_hover")
+theme_override_styles/pressed = SubResource("SB_btn_hover")
+theme_override_styles/focus = SubResource("SB_btn_focus")
+text = "GARAGE"
+
+[node name="RestartButton" type="Button" parent="Root/ButtonsSlot/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"BackWideButton"
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.098, 0.098, 0.098, 1)
+theme_override_colors/font_pressed_color = Color(0.098, 0.098, 0.098, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 1, 1)
+theme_override_styles/normal = SubResource("SB_btn_primary")
+theme_override_styles/hover = SubResource("SB_btn_primary_hover")
+theme_override_styles/pressed = SubResource("SB_btn_primary_hover")
+theme_override_styles/focus = SubResource("SB_btn_focus")
+text = "RESTART (R)"

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://djcdp3jp7xteh"]
+
+[ext_resource type="Script" uid="uid://ck77wavy6iuqh" path="res://MAIN/misc/bloom_setting_applier.gd" id="1"]
+[ext_resource type="Shader" uid="uid://cw0kx3w083jp5" path="res://assets/sky/Sky.gdshader" id="2_sky"]
+[ext_resource type="Script" uid="uid://b37napo45knqa" path="res://MAIN/misc/fog_band.gd" id="3_fog"]
+[ext_resource type="Script" path="res://MAIN/misc/sky_cycle.gd" id="4_cycle"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_night_sky"]
+shader = ExtResource("2_sky")
+shader_parameter/zenith_tint = Color(0.01, 0.02, 0.05, 1)
+shader_parameter/horizon_tint = Color(0.05, 0.08, 0.18, 1)
+shader_parameter/horizon_softness = 0.25
+shader_parameter/horizon_glow_tint = Color(0.35, 0.25, 0.45, 1)
+shader_parameter/horizon_glow_strength = 0.4
+shader_parameter/moon_tint = Color(1, 0.98, 0.9, 1)
+shader_parameter/moon_radius = 0.115
+shader_parameter/moon_softness = 0.002
+shader_parameter/moon_phase = 0.3
+shader_parameter/moon_phase_rotation = 190.0
+shader_parameter/moon_terminator_softness = 0.04
+shader_parameter/moon_earthshine = 0.05
+shader_parameter/moon_glow_tint = Color(0.6, 0.7, 1, 1)
+shader_parameter/moon_glow_strength = 0.35
+shader_parameter/moon_glow_radius = 0.25
+shader_parameter/star_density = 140.0
+shader_parameter/star_coverage = 0.2
+shader_parameter/star_size = 0.2
+shader_parameter/star_brightness = 1.0
+shader_parameter/star_twinkle_speed = 2.0
+shader_parameter/star_color_cool = Color(0.75, 0.85, 1, 1)
+shader_parameter/star_color_warm = Color(1, 0.9, 0.75, 1)
+shader_parameter/galaxy_strength = 0.25
+shader_parameter/galaxy_tint = Color(0.45, 0.35, 0.6, 1)
+shader_parameter/galaxy_pole = Vector3(0.25, 0.95, 0.15)
+shader_parameter/galaxy_width = 0.22
+shader_parameter/cloud_tint = Color(0.063, 0.071, 0.106, 1)
+shader_parameter/cloud_contour = 0.07
+shader_parameter/cloud_zoom = 2.2
+shader_parameter/cloud_drift = 0.05
+shader_parameter/cloud_layer_count = 6
+shader_parameter/cloud_coverage = 0.35
+shader_parameter/cloud_opacity = 0.6
+
+[sub_resource type="Sky" id="Sky_night"]
+sky_material = SubResource("ShaderMaterial_night_sky")
+
+[sub_resource type="Environment" id="Environment_night"]
+background_mode = 2
+sky = SubResource("Sky_night")
+ambient_light_source = 2
+ambient_light_color = Color(0.25, 0.3, 0.45, 1)
+ambient_light_energy = 0.5
+fog_enabled = true
+fog_light_color = Color(0.03, 0.04, 0.08, 1)
+fog_density = 0.0
+fog_sky_affect = 0.0
+fog_height_density = 0.006
+
+[node name="NightEnvironment" type="WorldEnvironment" unique_id=1187656360]
+environment = SubResource("Environment_night")
+script = ExtResource("1")
+
+[node name="moonlight" type="DirectionalLight3D" parent="." unique_id=449825250]
+transform = Transform3D(0.8660254, -0.28678823, 0.40957603, 0, 0.81915206, 0.57357645, -0.5, -0.49673176, 0.7094065, 0, 0, 0)
+light_color = Color(0.8620682, 0.9046947, 1, 1)
+light_energy = 0.15
+light_indirect_energy = 1.596
+light_specular = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 1.466
+shadow_opacity = 0.6
+shadow_blur = 2.5
+
+[node name="FogBand" type="Node" parent="." unique_id=1511868812]
+script = ExtResource("3_fog")
+
+[node name="SkyCycle" type="Node" parent="."]
+script = ExtResource("4_cycle")

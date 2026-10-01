@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cd6hdjw4vqroy"]
+
+[ext_resource type="Script" uid="uid://dimncouj1jrkj" path="res://MAIN/cars/interiors/car_interior.gd" id="1_interior"]
+
+[node name="Sports_01_Interior" type="Node3D" unique_id=1785231256]
+script = ExtResource("1_interior")
+car_id = "Sports_01"
+
+[node name="DomeLight" type="OmniLight3D" parent="." unique_id=346170906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97, -0.21)
+light_color = Color(1, 0.86, 0.7, 1)
+light_energy = 0.8
+omni_range = 3.5
+
+[node name="DriverCamera" type="Camera3D" parent="." unique_id=1088537187]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0.96, 2.5513024, 0.07078898)

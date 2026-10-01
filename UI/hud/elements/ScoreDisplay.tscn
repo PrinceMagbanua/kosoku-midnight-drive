@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/hud/elements/score_display.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans.ttf" id="2_reg"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans-Bold.ttf" id="3_bold"]
+[ext_resource type="FontFile" uid="uid://cumcxb1fywqol" path="res://FONT/KosokuDisplay/KosokuDisplay-Regular.ttf" id="4_display"]
+
+[sub_resource type="FontVariation" id="FontVariation_track"]
+base_font = ExtResource("2_reg")
+spacing_glyph = 2
+
+[node name="ScoreDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 81.0
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="CaptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.373, 0.478, 0.51, 1)
+theme_override_fonts/font = SubResource("FontVariation_track")
+theme_override_font_sizes/font_size = 10
+text = "SCORE"
+
+[node name="ValueLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 6.0
+offset_right = 300.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.918, 0.969, 0.98, 1)
+theme_override_fonts/font = ExtResource("4_display")
+theme_override_font_sizes/font_size = 64
+text = "0"

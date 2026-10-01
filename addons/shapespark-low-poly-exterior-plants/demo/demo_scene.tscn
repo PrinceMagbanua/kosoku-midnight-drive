@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://ujnaxs3aradu"]
+
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-01-1-mesh.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-01-2-mesh.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-01-3-mesh.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-01-4-mesh.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-02-2-mesh.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-03-4-mesh.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-02-4-mesh.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-03-2-mesh.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/hedge-01-mesh.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/bush-01-mesh.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-03-1-mesh.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-02-3-mesh.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-03-3-mesh.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/tree-02-1-mesh.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/bush-03-staticbody.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/flowers-04-mesh.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/grass-02-mesh.tscn" id="17"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-02-1-staticbody.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/clover-04-mesh.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/grass-03-mesh.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-03-3-staticbody.tscn" id="21"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-02-4-staticbody.tscn" id="22"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/hedge-01-staticbody.tscn" id="23"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/clover-01-mesh.tscn" id="24"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/bush-04-mesh.tscn" id="25"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/clover-03-mesh.tscn" id="26"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-03-1-staticbody.tscn" id="27"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/clover-05-mesh.tscn" id="28"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-01-4-staticbody.tscn" id="29"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-01-3-staticbody.tscn" id="30"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/bush-03-mesh.tscn" id="31"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/bush-05-mesh.tscn" id="32"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/grass-01-mesh.tscn" id="33"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-03-4-staticbody.tscn" id="34"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/flowers-02-mesh.tscn" id="35"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/bush-02-mesh.tscn" id="36"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-01-2-staticbody.tscn" id="37"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-03-2-staticbody.tscn" id="38"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-02-3-staticbody.tscn" id="39"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/flowers-03-mesh.tscn" id="40"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/bush-04-staticbody.tscn" id="41"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/clover-02-mesh.tscn" id="42"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-01-1-staticbody.tscn" id="43"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/meshes/flowers-01-mesh.tscn" id="44"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/tree-02-2-staticbody.tscn" id="45"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/bush-01-staticbody.tscn" id="46"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/bush-05-staticbody.tscn" id="47"]
+[ext_resource type="PackedScene" path="res://addons/shapespark-low-poly-exterior-plants/bodies/bush-02-staticbody.tscn" id="48"]
+[ext_resource type="Script" uid="uid://cvnmej1ajoa4c" path="res://addons/shapespark-low-poly-exterior-plants/demo/camera-orbit.gd" id="49"]
+
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_color = Color(0.00392157, 0.368627, 0.137255, 1)
+
+[sub_resource type="PlaneMesh" id="2"]
+material = SubResource("1")
+size = Vector2(40, 40)
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(40, 2, 40)
+
+[sub_resource type="Sky" id="4"]
+
+[sub_resource type="Environment" id="5"]
+background_mode = 2
+sky = SubResource("4")
+sky_rotation = Vector3(0, 0.7853982, 0)
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.5
+
+[node name="DemoScene" type="Node3D" unique_id=2097968937]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1404272783]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Ground" unique_id=761602111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11706829, 0.020317793, 0.051306486)
+mesh = SubResource("2")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Ground" unique_id=1279185754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("3")
+
+[node name="Meshes" type="Node3D" parent="." unique_id=821772328]
+
+[node name="Tree-01-1" parent="Meshes" unique_id=1548204773 instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 3)
+
+[node name="Tree-01-2" parent="Meshes" unique_id=1165007291 instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -2)
+
+[node name="Tree-01-3" parent="Meshes" unique_id=457576599 instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -7)
+
+[node name="Tree-01-4" parent="Meshes" unique_id=385272476 instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -12)
+
+[node name="Tree-02-1" parent="Meshes" unique_id=293819060 instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 3)
+
+[node name="Tree-02-2" parent="Meshes" unique_id=2134622587 instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -2)
+
+[node name="Tree-02-3" parent="Meshes" unique_id=560259519 instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -7)
+
+[node name="Tree-02-4" parent="Meshes" unique_id=1239118396 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -12)
+
+[node name="Tree-03-1" parent="Meshes" unique_id=14711174 instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="Tree-03-2" parent="Meshes" unique_id=624844145 instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -2)
+
+[node name="Tree-03-3" parent="Meshes" unique_id=336268559 instance=ExtResource("13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7)
+
+[node name="Tree-03-4" parent="Meshes" unique_id=1093198000 instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -12)
+
+[node name="Hedge-01" parent="Meshes" unique_id=2089019370 instance=ExtResource("9")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17, 0, 9)
+
+[node name="Bush-01" parent="Meshes" unique_id=1237442930 instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0, 10)
+
+[node name="Bush-02" parent="Meshes" unique_id=128335649 instance=ExtResource("36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 10)
+
+[node name="Bush-03" parent="Meshes" unique_id=943095587 instance=ExtResource("31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0, 8)
+
+[node name="Bush-04" parent="Meshes" unique_id=320647423 instance=ExtResource("25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 8)
+skeleton = NodePath("../..")
+
+[node name="Bush-05" parent="Meshes" unique_id=1642540041 instance=ExtResource("32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 9)
+
+[node name="Clover-01" parent="Meshes" unique_id=1734089991 instance=ExtResource("24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 10)
+
+[node name="Clover-02" parent="Meshes" unique_id=1581484066 instance=ExtResource("42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 10)
+
+[node name="Clover-03" parent="Meshes" unique_id=449380516 instance=ExtResource("26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 8)
+
+[node name="Clover-04" parent="Meshes" unique_id=416362153 instance=ExtResource("19")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 8)
+
+[node name="Clover-05" parent="Meshes" unique_id=788631985 instance=ExtResource("28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="Grass-01" parent="Meshes" unique_id=748975885 instance=ExtResource("33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3, 0, 11)
+
+[node name="Grass-02" parent="Meshes" unique_id=2008580513 instance=ExtResource("17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3, 0, 9)
+
+[node name="Grass-03" parent="Meshes" unique_id=1045818067 instance=ExtResource("20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3, 0, 7)
+
+[node name="Flowers-01" parent="Meshes" unique_id=942793176 instance=ExtResource("44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 10)
+
+[node name="Flowers-02" parent="Meshes" unique_id=1636154631 instance=ExtResource("35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 10)
+
+[node name="Flowers-03" parent="Meshes" unique_id=1798063457 instance=ExtResource("40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 8)
+
+[node name="Flowers-04" parent="Meshes" unique_id=389219884 instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 8)
+
+[node name="Bodies" type="Node3D" parent="." unique_id=356301712]
+
+[node name="Tree-01-1-StaticBody" parent="Bodies" unique_id=403067471 instance=ExtResource("43")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="Tree-01-2-StaticBody" parent="Bodies" unique_id=1882007346 instance=ExtResource("37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -2)
+
+[node name="Tree-01-3-StaticBody" parent="Bodies" unique_id=1216403920 instance=ExtResource("30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7)
+
+[node name="Tree-01-4-StaticBody" parent="Bodies" unique_id=801522067 instance=ExtResource("29")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12)
+
+[node name="Tree-02-1-StaticBody" parent="Bodies" unique_id=61268686 instance=ExtResource("18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 3)
+
+[node name="Tree-02-2-StaticBody" parent="Bodies" unique_id=1837460210 instance=ExtResource("45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -2)
+
+[node name="Tree-02-3-StaticBody" parent="Bodies" unique_id=1982693745 instance=ExtResource("39")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7)
+
+[node name="Tree-02-4-StaticBody" parent="Bodies" unique_id=1778506910 instance=ExtResource("22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -12)
+
+[node name="Tree-03-1-StaticBody" parent="Bodies" unique_id=1399974692 instance=ExtResource("27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 3)
+
+[node name="Tree-03-2-StaticBody" parent="Bodies" unique_id=1161622833 instance=ExtResource("38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -2)
+
+[node name="Tree-03-3-StaticBody" parent="Bodies" unique_id=1874933428 instance=ExtResource("21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -7)
+
+[node name="Tree-03-4-StaticBody" parent="Bodies" unique_id=1024219121 instance=ExtResource("34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -12)
+
+[node name="Hedge-01-StaticBody" parent="Bodies" unique_id=1488652320 instance=ExtResource("23")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 9)
+
+[node name="Bush-01-StaticBody" parent="Bodies" unique_id=1007916382 instance=ExtResource("46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
+
+[node name="Bush-02-StaticBody" parent="Bodies" unique_id=1548964486 instance=ExtResource("48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 10)
+
+[node name="Bush-03-StaticBody" parent="Bodies" unique_id=1652310936 instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+
+[node name="Bush-04-StaticBody" parent="Bodies" unique_id=1674626668 instance=ExtResource("41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 8)
+
+[node name="Bush-05-StaticBody" parent="Bodies" unique_id=1363445371 instance=ExtResource("47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 9)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1980793370]
+environment = SubResource("5")
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="." unique_id=2053538479]
+transform = Transform3D(-0.766044, 0.413176, -0.492404, 0, 0.766044, 0.642788, 0.642788, 0.492404, -0.586824, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera" type="Camera3D" parent="." unique_id=2041629286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 20)
+script = ExtResource("49")

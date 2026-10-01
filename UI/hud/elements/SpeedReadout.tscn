@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/hud/elements/speed_readout.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans.ttf" id="2_reg"]
+[ext_resource type="FontFile" uid="uid://cumcxb1fywqol" path="res://FONT/KosokuDisplay/KosokuDisplay-Regular.ttf" id="3_display"]
+
+[sub_resource type="FontVariation" id="FontVariation_track_sm"]
+base_font = ExtResource("2_reg")
+spacing_glyph = 1
+
+[node name="SpeedReadout" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 62.0
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="SpeedLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -10.0
+offset_right = 110.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 1)
+theme_override_fonts/font = ExtResource("3_display")
+theme_override_font_sizes/font_size = 30
+text = "110"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarnLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -10.0
+offset_right = 110.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("3_display")
+theme_override_font_sizes/font_size = 11
+text = "DAMAGE
+CRITICAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnitLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 49.0
+offset_right = 100.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.945, 0.973, 0.988, 0.85)
+theme_override_fonts/font = SubResource("FontVariation_track_sm")
+theme_override_font_sizes/font_size = 9
+text = "MPH"
+horizontal_alignment = 1

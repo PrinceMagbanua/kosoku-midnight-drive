@@ -1,0 +1,9 @@
+# Godot editor cache
+.godot/
+*.tmp
+
+# Build output
+exports/
+
+# Local tooling
+.claude/

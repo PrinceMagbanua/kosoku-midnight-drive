@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://MAIN/misc/impact_flash.gd" id="1"]
+[ext_resource type="Shader" path="res://MAIN/misc/impact_flash.gdshader" id="2"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("2")
+shader_parameter/intensity = 0.0
+shader_parameter/vignette_color = Color(0.78, 0.74, 0.68, 1)
+shader_parameter/inner_radius = 0.2
+shader_parameter/outer_radius = 0.95
+
+[node name="ImpactFlash" type="CanvasLayer"]
+layer = 8
+script = ExtResource("1")
+
+[node name="Rect" type="ColorRect" parent="."]
+material = SubResource("1")
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 1)

@@ -1,0 +1,438 @@
+[gd_scene format=3 uid="uid://c8mhla063npgf"]
+
+[ext_resource type="Script" uid="uid://5tk55sfcol4" path="res://UI/hud/live_hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://utc4dxp8iumt" path="res://UI/hud/controls_widget.gd" id="2_ctrl"]
+[ext_resource type="PackedScene" path="res://UI/hud/elements/ScoreDisplay.tscn" id="3_score"]
+[ext_resource type="PackedScene" path="res://UI/hud/elements/StatLabel.tscn" id="4_stat"]
+[ext_resource type="PackedScene" path="res://UI/hud/elements/PilePopup.tscn" id="5_pile"]
+[ext_resource type="PackedScene" path="res://UI/hud/elements/IconButton.tscn" id="6_btn"]
+[ext_resource type="PackedScene" path="res://UI/hud/elements/DamageSilhouette.tscn" id="8_dmg"]
+[ext_resource type="PackedScene" uid="uid://dx5u5f8odnha6" path="res://UI/hud/elements/MainDial.tscn" id="11_main"]
+[ext_resource type="FontFile" uid="uid://luy46vxwmlu4" path="res://FONT/DroidSans-Bold.ttf" id="12_bold"]
+[ext_resource type="FontFile" uid="uid://cumcxb1fywqol" path="res://FONT/KosokuDisplay/KosokuDisplay-Regular.ttf" id="19_display"]
+[ext_resource type="Theme" uid="uid://dtrmoujawfnog" path="res://theme/main_theme.tres" id="13_theme"]
+[ext_resource type="FontFile" uid="uid://btyvoi7jkhec0" path="res://FONT/DroidSans.ttf" id="14_reg"]
+[ext_resource type="Script" path="res://UI/hud/elements/score_feed.gd" id="16_feed"]
+[ext_resource type="PackedScene" path="res://UI/hud/elements/NitroBottles.tscn" id="21_bottles"]
+[ext_resource type="PackedScene" path="res://UI/hud/elements/SlowMoArc.tscn" id="22_arc"]
+[ext_resource type="Script" path="res://UI/hud/hud_sway.gd" id="23_sway"]
+
+[node name="LiveHud" type="CanvasLayer" unique_id=80068173]
+layer = 3
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="." unique_id=1497221949]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopLeft" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Centre" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BottomLeft" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cluster" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Chrome" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScoreDisplay" parent="Root/TopLeft" unique_id=848817455 instance=ExtResource("3_score")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 328.0
+offset_bottom = 105.0
+
+[node name="ComboDisplay" parent="Root/TopLeft" unique_id=134569895 instance=ExtResource("4_stat")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 28.0
+offset_top = 116.0
+offset_right = 228.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.341, 0.839, 0.553, 1)
+theme_override_fonts/font = ExtResource("19_display")
+theme_override_font_sizes/font_size = 38
+text = "1×"
+
+[node name="CashDisplay" parent="Root/TopLeft" unique_id=154218437 instance=ExtResource("4_stat")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 28.0
+offset_top = 170.0
+offset_right = 228.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.62, 0.71, 0.74, 0.9)
+theme_override_font_sizes/font_size = 13
+
+[node name="DistanceDisplay" parent="Root/Chrome" unique_id=1770104243 instance=ExtResource("4_stat")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 388.0
+offset_top = 8.0
+offset_right = 635.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.373, 0.478, 0.51, 0.85)
+theme_override_font_sizes/font_size = 11
+text = "0.00 km"
+horizontal_alignment = 1
+
+[node name="HelpButton" parent="Root/Chrome" unique_id=806263496 instance=ExtResource("6_btn")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_top = 20.0
+offset_right = -64.0
+offset_bottom = 54.0
+grow_horizontal = 0
+
+[node name="SettingsButton" parent="Root/Chrome" unique_id=1968188375 instance=ExtResource("6_btn")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 54.0
+grow_horizontal = 0
+text = ""
+glyph = 1
+
+[node name="ToastStack" type="VBoxContainer" parent="Root/Centre" unique_id=384872963]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -170.0
+offset_right = 170.0
+offset_bottom = 220.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="PilePopup" parent="Root/Centre" unique_id=585169149 instance=ExtResource("5_pile")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 398.0
+offset_top = 373.0
+offset_right = 628.0
+offset_bottom = 413.0
+
+[node name="ScoreFeed" type="Control" parent="Root/Centre"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 353.0
+offset_top = 416.0
+offset_right = 673.0
+offset_bottom = 580.0
+mouse_filter = 2
+script = ExtResource("16_feed")
+
+[node name="DamageSilhouette" parent="Root/BottomLeft" instance=ExtResource("8_dmg")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -144.0
+offset_right = 88.0
+offset_bottom = -24.0
+grow_vertical = 0
+
+[node name="MainDial" parent="Root/Cluster" unique_id=953390616 instance=ExtResource("11_main")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -262.0
+offset_right = -26.0
+offset_bottom = -52.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="NitroBottles" parent="Root/Cluster" instance=ExtResource("21_bottles")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -94.0
+offset_right = -71.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SlowMoArc" parent="Root/Cluster" instance=ExtResource("22_arc")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -253.0
+offset_top = -279.0
+offset_right = -9.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ControlsWidget" type="Control" parent="Root/Chrome" unique_id=1630057959]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -30.0
+offset_right = 120.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme = ExtResource("13_theme")
+script = ExtResource("2_ctrl")
+
+[node name="ToggleButton" type="Button" parent="Root/Chrome/ControlsWidget" unique_id=1806756456]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -16.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.373, 0.478, 0.51, 1)
+theme_override_colors/font_pressed_color = Color(0.918, 0.969, 0.98, 1)
+theme_override_colors/font_hover_color = Color(0.918, 0.969, 0.98, 1)
+theme_override_fonts/font = ExtResource("14_reg")
+theme_override_font_sizes/font_size = 9
+text = "CONTROLS"
+flat = true
+
+[node name="List" type="PanelContainer" parent="Root/Chrome/ControlsWidget" unique_id=2122033438]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = -310.0
+offset_right = 240.0
+offset_bottom = -6.0
+mouse_filter = 2
+theme_type_variation = &"MenuPanel"
+
+[node name="Grid" type="GridContainer" parent="Root/Chrome/ControlsWidget/List" unique_id=1103144759]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="Key0" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=370107715]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "W / ↑"
+
+[node name="Action0" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1485195379]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Gas"
+
+[node name="Key1" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=547225125]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "S / ↓"
+
+[node name="Action1" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1178668286]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Brake"
+
+[node name="Key2" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1903161389]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "A/D or ←/→"
+
+[node name="Action2" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=393528671]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Steer"
+
+[node name="Key3" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=950346647]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "Space"
+
+[node name="Action3" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1300638306]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Handbrake"
+
+[node name="Key4" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1394787295]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "K"
+
+[node name="Action4" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1439730014]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Clutch"
+
+[node name="Key5" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=189083777]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "E / P"
+
+[node name="Action5" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1760396081]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Shift Up"
+
+[node name="Key6" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=465126145]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "Q / L"
+
+[node name="Action6" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1937377065]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Shift Down"
+
+[node name="Key7" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1612137200]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "Shift / N"
+
+[node name="Action7" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=202811684]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Nitro"
+
+[node name="KeySlowMo" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1407948133]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "Ctrl"
+
+[node name="ActionSlowMo" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=824145250]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Slow-mo"
+
+[node name="Key8" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=2013370612]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "C"
+
+[node name="Action8" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1526799451]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Cockpit Cam"
+
+[node name="Key9" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=267707729]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "I / O"
+
+[node name="Action9" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1410623758]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Zoom In/Out"
+
+[node name="Key10" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=681695082]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = ", / ."
+
+[node name="Action10" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1812115199]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Orbit Camera"
+
+[node name="Key11" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=245820082]
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+theme_override_font_sizes/font_size = 11
+text = "F11"
+
+[node name="Action11" type="Label" parent="Root/Chrome/ControlsWidget/List/Grid" unique_id=1373928873]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Fullscreen"
+
+[node name="HudSway" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("23_sway")
+groups = Array[NodePath]([NodePath("../Root/TopLeft"), NodePath("../Root/Centre"), NodePath("../Root/BottomLeft"), NodePath("../Root/Cluster"), NodePath("../Root/Chrome")])
+depths = Array[float]([0.4, 0.6, 0.8, 1.0, 0.0])

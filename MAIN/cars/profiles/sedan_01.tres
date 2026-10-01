@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CarProfile" format=3 uid="uid://cfl8pa02tbloj"]
+
+[ext_resource type="Script" uid="uid://dpngdj3jayytp" path="res://MAIN/cars/car_profile.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://der5n18qexuts" path="res://assets/cars/Kosoku_Cars_GLB/cars/Sedan_01/Sedan_01_Base.glb" id="2_hull"]
+[ext_resource type="Script" uid="uid://cwu0qajodeldu" path="res://MAIN/cars/car_feel_config.gd" id="3_feel_script"]
+
+[sub_resource type="Resource" id="Resource_sedan_01_feel"]
+script = ExtResource("3_feel_script")
+
+[resource]
+script = ExtResource("1_script")
+id = "sedan_01"
+display_name = "KAZE"
+hull_scene = ExtResource("2_hull")
+manifest_id = "Sedan_01"
+default_paint = "PolygonStreetRacer_Texture_01_B.png"
+acceleration = 6
+top_speed = 6
+braking = 6
+feel = SubResource("Resource_sedan_01_feel")

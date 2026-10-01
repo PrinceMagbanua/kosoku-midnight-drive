@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dvc8rvbpla64r"]
+
+[ext_resource type="Script" uid="uid://b24iuu8vqh8qn" path="res://UI/garage/car_stats_block.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://r4lvpmyt3am8" path="res://UI/garage/stat_bar.gd" id="2_bar"]
+[ext_resource type="Script" uid="uid://dag724weshtqs" path="res://UI/common/button_motion.gd" id="3_motion"]
+
+[node name="CarStatsBlock" type="Control" unique_id=1291084982]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 440.0
+offset_bottom = 120.0
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Row" type="HBoxContainer" parent="." unique_id=864496754]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 26
+
+[node name="Stats" type="VBoxContainer" parent="Row" unique_id=1065134908]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 9
+
+[node name="AccelRow" type="HBoxContainer" parent="Row/Stats" unique_id=1117988655]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="Row/Stats/AccelRow" unique_id=349011228]
+custom_minimum_size = Vector2(98, 0)
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+theme_override_colors/font_color = Color(0.8235294, 0.84313726, 0.8901961, 1)
+text = "ACCELERATION"
+vertical_alignment = 1
+
+[node name="AccelBar" type="Control" parent="Row/Stats/AccelRow" unique_id=483771945]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("2_bar")
+
+[node name="TopRow" type="HBoxContainer" parent="Row/Stats" unique_id=683921536]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="Row/Stats/TopRow" unique_id=1146726880]
+custom_minimum_size = Vector2(98, 0)
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+theme_override_colors/font_color = Color(0.8235294, 0.84313726, 0.8901961, 1)
+text = "TOP SPEED"
+vertical_alignment = 1
+
+[node name="TopBar" type="Control" parent="Row/Stats/TopRow" unique_id=1277331408]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("2_bar")
+
+[node name="HandlingRow" type="HBoxContainer" parent="Row/Stats" unique_id=1375581369]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="Row/Stats/HandlingRow" unique_id=1571204310]
+custom_minimum_size = Vector2(98, 0)
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+theme_override_colors/font_color = Color(0.8235294, 0.84313726, 0.8901961, 1)
+text = "HANDLING"
+vertical_alignment = 1
+
+[node name="HandlingBar" type="Control" parent="Row/Stats/HandlingRow" unique_id=1649692954]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("2_bar")
+
+[node name="BrakingRow" type="HBoxContainer" parent="Row/Stats" unique_id=1976160617]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="Row/Stats/BrakingRow" unique_id=189930185]
+custom_minimum_size = Vector2(98, 0)
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+theme_override_colors/font_color = Color(0.8235294, 0.84313726, 0.8901961, 1)
+text = "BRAKING"
+vertical_alignment = 1
+
+[node name="BrakingBar" type="Control" parent="Row/Stats/BrakingRow" unique_id=908157787]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("2_bar")
+
+[node name="BuyCarButton" type="Button" parent="Row" unique_id=1432838946]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"BuyButton"
+disabled = true
+text = "BOUGHT"
+script = ExtResource("3_motion")
+hover_scale = 1.05

@@ -1,0 +1,492 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/garage/customize_screen.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://dag5rv5a6rnu0" path="res://UI/common/panel_shape.gd" id="2_panel"]
+[ext_resource type="Script" uid="uid://dag724weshtqs" path="res://UI/common/button_motion.gd" id="3_motion"]
+
+[node name="CustomizeScreen" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="DragArea" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 13
+
+[node name="Header" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 16
+
+[node name="TitleBox" type="VBoxContainer" parent="Header"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="Label" parent="Header/TitleBox"]
+layout_mode = 2
+theme_type_variation = &"GarageTitle"
+text = "CUSTOMIZE"
+
+[node name="CarLabel" type="Label" parent="Header/TitleBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GarageVehLabel"
+theme_override_font_sizes/font_size = 16
+text = "Sports 01"
+
+[node name="FocusTag" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -96.0
+offset_right = 470.0
+offset_bottom = -30.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 6
+alignment = 2
+
+[node name="HintLabel" type="Label" parent="FocusTag"]
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+text = "DRAG TO ORBIT  ·  SCROLL TO ZOOM"
+
+[node name="FocusRow" type="HBoxContainer" parent="FocusTag"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="FocusBar" type="ColorRect" parent="FocusTag/FocusRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[node name="FocusText" type="VBoxContainer" parent="FocusTag/FocusRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="FocusLabel" type="Label" parent="FocusTag/FocusRow/FocusText"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GarageTitle"
+theme_override_colors/font_color = Color(0.9098, 0.6392, 0.2392, 1)
+theme_override_font_sizes/font_size = 22
+text = "FRONT BUMPER"
+
+[node name="FocusSubLabel" type="Label" parent="FocusTag/FocusRow/FocusText"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+theme_override_colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+text = "VARIANT 01 / 04"
+
+[node name="Panel" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_panel")
+top_color = Color(0, 0, 0, 0)
+bottom_color = Color(0, 0, 0, 0)
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" type="MarginContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 16
+
+[node name="TopRow" type="HBoxContainer" parent="Panel/VBox/TopBar"]
+layout_mode = 2
+
+[node name="Tabs" type="HBoxContainer" parent="Panel/VBox/TopBar/TopRow"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TabBody" type="Button" parent="Panel/VBox/TopBar/TopRow/Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ToggleButton"
+text = "BODY"
+script = ExtResource("3_motion")
+hover_scale = 1.05
+
+[node name="TabWheels" type="Button" parent="Panel/VBox/TopBar/TopRow/Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ToggleButton"
+text = "WHEELS"
+script = ExtResource("3_motion")
+hover_scale = 1.05
+
+[node name="TabPaint" type="Button" parent="Panel/VBox/TopBar/TopRow/Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ToggleButton"
+text = "PAINT"
+script = ExtResource("3_motion")
+hover_scale = 1.05
+
+[node name="TabGlass" type="Button" parent="Panel/VBox/TopBar/TopRow/Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ToggleButton"
+text = "GLASS"
+script = ExtResource("3_motion")
+hover_scale = 1.05
+
+[node name="TopSpacer" type="Control" parent="Panel/VBox/TopBar/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="PresetLabel" type="Label" parent="Panel/VBox/TopBar/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+text = "4 CARS  ·  138 PARTS"
+vertical_alignment = 1
+
+[node name="Divider1" type="ColorRect" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0.102, 0.1255, 0.1882, 1)
+
+[node name="Pages" type="Control" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BodyPage" type="HBoxContainer" parent="Panel/VBox/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="SlotScroll" type="ScrollContainer" parent="Panel/VBox/Pages/BodyPage"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="SlotMargin" type="MarginContainer" parent="Panel/VBox/Pages/BodyPage/SlotScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="SlotList" type="VBoxContainer" parent="Panel/VBox/Pages/BodyPage/SlotScroll/SlotMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Divider" type="ColorRect" parent="Panel/VBox/Pages/BodyPage"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+color = Color(0.102, 0.1255, 0.1882, 1)
+
+[node name="VariantMargin" type="MarginContainer" parent="Panel/VBox/Pages/BodyPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 16
+
+[node name="VariantBox" type="VBoxContainer" parent="Panel/VBox/Pages/BodyPage/VariantMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SlotName" type="Label" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"UpgradeNameLabel"
+text = "Front Bumper"
+
+[node name="SlotKind" type="Label" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+text = "REQUIRED  ·  4 VARIANTS"
+
+[node name="SelectorPad" type="Control" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Selector" type="HBoxContainer" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PrevVariant" type="Button" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox/Selector"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BackButton"
+theme_override_colors/font_color = Color(0.75, 0.78, 0.85, 1)
+theme_override_font_sizes/font_size = 40
+text = "‹"
+script = ExtResource("3_motion")
+hover_scale = 1.15
+
+[node name="VariantLabel" type="Label" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox/Selector"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GarageTitle"
+theme_override_font_sizes/font_size = 30
+text = "01"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextVariant" type="Button" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox/Selector"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BackButton"
+theme_override_colors/font_color = Color(0.75, 0.78, 0.85, 1)
+theme_override_font_sizes/font_size = 40
+text = "›"
+script = ExtResource("3_motion")
+hover_scale = 1.15
+
+[node name="VariantGrid" type="GridContainer" parent="Panel/VBox/Pages/BodyPage/VariantMargin/VariantBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 5
+
+[node name="WheelsPage" type="ScrollContainer" parent="Panel/VBox/Pages"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="WheelsMargin" type="MarginContainer" parent="Panel/VBox/Pages/WheelsPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 18
+
+[node name="WheelsBox" type="VBoxContainer" parent="Panel/VBox/Pages/WheelsPage/WheelsMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RimHeader" type="Label" parent="Panel/VBox/Pages/WheelsPage/WheelsMargin/WheelsBox"]
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+text = "RIMS"
+
+[node name="RimGrid" type="GridContainer" parent="Panel/VBox/Pages/WheelsPage/WheelsMargin/WheelsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 7
+
+[node name="TyrePad" type="Control" parent="Panel/VBox/Pages/WheelsPage/WheelsMargin/WheelsBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TyreHeader" type="Label" parent="Panel/VBox/Pages/WheelsPage/WheelsMargin/WheelsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+text = "TYRES"
+
+[node name="TyreGrid" type="GridContainer" parent="Panel/VBox/Pages/WheelsPage/WheelsMargin/WheelsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 7
+
+[node name="PaintPage" type="VBoxContainer" parent="Panel/VBox/Pages"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="PaintTop" type="MarginContainer" parent="Panel/VBox/Pages/PaintPage"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 8
+
+[node name="PaintTopRow" type="HBoxContainer" parent="Panel/VBox/Pages/PaintPage/PaintTop"]
+layout_mode = 2
+
+[node name="PaintGroups" type="HBoxContainer" parent="Panel/VBox/Pages/PaintPage/PaintTop/PaintTopRow"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SolidButton" type="Button" parent="Panel/VBox/Pages/PaintPage/PaintTop/PaintTopRow/PaintGroups"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ToggleButton"
+text = "SOLID"
+script = ExtResource("3_motion")
+hover_scale = 1.05
+
+[node name="LiveryButton" type="Button" parent="Panel/VBox/Pages/PaintPage/PaintTop/PaintTopRow/PaintGroups"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ToggleButton"
+text = "LIVERY"
+script = ExtResource("3_motion")
+hover_scale = 1.05
+
+[node name="PaintSpacer" type="Control" parent="Panel/VBox/Pages/PaintPage/PaintTop/PaintTopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="PaintName" type="Label" parent="Panel/VBox/Pages/PaintPage/PaintTop/PaintTopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"UpgradeIconLabel"
+text = "FLAMES"
+vertical_alignment = 1
+
+[node name="PaintScroll" type="ScrollContainer" parent="Panel/VBox/Pages/PaintPage"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PaintMargin" type="MarginContainer" parent="Panel/VBox/Pages/PaintPage/PaintScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 18
+
+[node name="PaintGrid" type="GridContainer" parent="Panel/VBox/Pages/PaintPage/PaintScroll/PaintMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="GlassPage" type="ScrollContainer" parent="Panel/VBox/Pages"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="GlassMargin" type="MarginContainer" parent="Panel/VBox/Pages/GlassPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 18
+
+[node name="GlassBox" type="VBoxContainer" parent="Panel/VBox/Pages/GlassPage/GlassMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TintHeader" type="Label" parent="Panel/VBox/Pages/GlassPage/GlassMargin/GlassBox"]
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+text = "WINDOW TINT"
+
+[node name="TintGrid" type="GridContainer" parent="Panel/VBox/Pages/GlassPage/GlassMargin/GlassBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="Divider2" type="ColorRect" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0.102, 0.1255, 0.1882, 1)
+
+[node name="Foot" type="MarginContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="FootRow" type="HBoxContainer" parent="Panel/VBox/Foot"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RandomizeButton" type="Button" parent="Panel/VBox/Foot/FootRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BackWideButton"
+text = "RANDOMIZE"
+script = ExtResource("3_motion")
+hover_scale = 1.06
+
+[node name="ResetButton" type="Button" parent="Panel/VBox/Foot/FootRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BackWideButton"
+text = "RESET"
+script = ExtResource("3_motion")
+hover_scale = 1.06
+
+[node name="DoneButton" type="Button" parent="Panel/VBox/Foot/FootRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"EndlessButton"
+text = "BACK"
+script = ExtResource("3_motion")
+hover_scale = 1.06

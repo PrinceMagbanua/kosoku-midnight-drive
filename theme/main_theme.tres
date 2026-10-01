@@ -1,0 +1,654 @@
+[gd_resource type="Theme" format=3 uid="uid://dtrmoujawfnog"]
+
+[ext_resource type="FontFile" uid="uid://cumcxb1fywqol" path="res://FONT/KosokuDisplay/KosokuDisplay-Regular.ttf" id="1_revalia"]
+[ext_resource type="FontFile" uid="uid://deiwl2u0mgapt" path="res://FONT/Exo2/Exo2-VariableFont_wght.ttf" id="2_exo2"]
+
+[sub_resource type="FontVariation" id="FV_int_400"]
+base_font = ExtResource("2_exo2")
+variation_opentype = {
+"wght": 400.0
+}
+
+[sub_resource type="StyleBoxEmpty" id="SB_empty"]
+
+[sub_resource type="FontVariation" id="FV_osw_500_track"]
+base_font = ExtResource("1_revalia")
+variation_opentype = {
+"wght": 500.0
+}
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_back_wide_hover"]
+content_margin_left = 26.0
+content_margin_top = 13.0
+content_margin_right = 26.0
+content_margin_bottom = 13.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5451, 0.5765, 0.6549, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_back_wide"]
+content_margin_left = 26.0
+content_margin_top = 13.0
+content_margin_right = 26.0
+content_margin_bottom = 13.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1451, 0.1725, 0.2392, 1)
+
+[sub_resource type="FontVariation" id="FV_int_500_track"]
+base_font = ExtResource("2_exo2")
+variation_opentype = {
+"wght": 500.0
+}
+spacing_glyph = 1
+
+[sub_resource type="FontVariation" id="FV_osw_400"]
+base_font = ExtResource("1_revalia")
+variation_opentype = {
+"wght": 400.0
+}
+
+[sub_resource type="StyleBoxFlat" id="SB_buy_disabled"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+bg_color = Color(0.1098, 0.1333, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_buy_hover"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+bg_color = Color(0.949, 0.702, 0.3294, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_buy"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+bg_color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[sub_resource type="FontVariation" id="FV_int_400_track"]
+base_font = ExtResource("2_exo2")
+variation_opentype = {
+"wght": 400.0
+}
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_cat_item_on"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.3725, 0.8157, 0.7882, 0.12)
+border_width_left = 2
+border_color = Color(0.3725, 0.8157, 0.7882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_cat_item"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="SB_endless_hover"]
+content_margin_left = 22.0
+content_margin_top = 13.0
+content_margin_right = 22.0
+content_margin_bottom = 13.0
+bg_color = Color(0.949, 0.702, 0.3294, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_endless"]
+content_margin_left = 22.0
+content_margin_top = 13.0
+content_margin_right = 22.0
+content_margin_bottom = 13.0
+bg_color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[sub_resource type="FontVariation" id="FV_osw_600_track"]
+base_font = ExtResource("1_revalia")
+variation_opentype = {
+"wght": 600.0
+}
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_scroll_grabber"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.1451, 0.1725, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_scroll_grabber_hover"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.298, 0.3294, 0.4078, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_scroll_grabber_pressed"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_scroll_track"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.0706, 0.0863, 0.1216, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_fill"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_track"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1451, 0.1725, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_icon_box"]
+bg_color = Color(0.1098, 0.1333, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_maxed"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3725, 0.8157, 0.7882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_menu_panel"]
+content_margin_left = 24.0
+content_margin_top = 22.0
+content_margin_right = 24.0
+content_margin_bottom = 22.0
+bg_color = Color(0.051, 0.0667, 0.098, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_menu_panel_compact"]
+content_margin_left = 14.0
+content_margin_top = 12.0
+content_margin_right = 14.0
+content_margin_bottom = 12.0
+bg_color = Color(0.051, 0.0667, 0.098, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_nav_item"]
+content_margin_left = 4.0
+content_margin_top = 13.0
+content_margin_right = 4.0
+content_margin_bottom = 13.0
+bg_color = Color(0, 0, 0, 0)
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_nav_compact"]
+content_margin_left = 6.0
+content_margin_top = 7.0
+content_margin_right = 6.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_nav_compact_hover"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 6.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_bottom = 1
+border_color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_nav_item_primary"]
+content_margin_left = 12.0
+content_margin_top = 13.0
+content_margin_right = 4.0
+content_margin_bottom = 13.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_nav_item_primary_border"]
+content_margin_left = 12.0
+content_margin_top = 13.0
+content_margin_right = 4.0
+content_margin_bottom = 13.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_bottom = 1
+border_color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_pip_off"]
+bg_color = Color(0.1451, 0.1725, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_pip_on"]
+bg_color = Color(0.9098, 0.6392, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_sell"]
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+bg_color = Color(0.8863, 0.3765, 0.2902, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_sell_hover"]
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+bg_color = Color(0.949, 0.4588, 0.3765, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_toggle_on"]
+content_margin_left = 15.0
+content_margin_top = 7.0
+content_margin_right = 15.0
+content_margin_bottom = 7.0
+bg_color = Color(0.9098, 0.6392, 0.2392, 0.12)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9098, 0.6392, 0.2392, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="SB_toggle_off"]
+content_margin_left = 15.0
+content_margin_top = 7.0
+content_margin_right = 15.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1451, 0.1725, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_upg_info"]
+content_margin_left = 14.0
+content_margin_top = 12.0
+content_margin_right = 14.0
+content_margin_bottom = 12.0
+bg_color = Color(0.051, 0.0667, 0.098, 0.75)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="FontVariation" id="FV_int_600"]
+base_font = ExtResource("2_exo2")
+variation_opentype = {
+"wght": 600.0
+}
+
+[sub_resource type="StyleBoxFlat" id="SB_refund"]
+content_margin_left = 16.0
+content_margin_top = 7.0
+content_margin_right = 16.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1451, 0.1725, 0.2392, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_refund_hover"]
+content_margin_left = 16.0
+content_margin_top = 7.0
+content_margin_right = 16.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5451, 0.5765, 0.6549, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_upg_row"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_upg_row_hover"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5412, 0.4157, 0.2039, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_upg_tile"]
+content_margin_left = 6.0
+content_margin_top = 8.0
+content_margin_right = 6.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 0.02)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.102, 0.1255, 0.1882, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_upg_tile_hover"]
+content_margin_left = 6.0
+content_margin_top = 8.0
+content_margin_right = 6.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9098, 0.6392, 0.2392, 0.05)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5412, 0.4157, 0.2039, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_upg_tile_selected"]
+content_margin_left = 6.0
+content_margin_top = 8.0
+content_margin_right = 6.0
+content_margin_bottom = 8.0
+bg_color = Color(0.3725, 0.8157, 0.7882, 0.1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3725, 0.8157, 0.7882, 1)
+
+[sub_resource type="FontVariation" id="FV_osw_600_track_wide"]
+base_font = ExtResource("1_revalia")
+variation_opentype = {
+"wght": 600.0
+}
+spacing_glyph = 3
+
+[resource]
+default_font = SubResource("FV_int_400")
+default_font_size = 13
+BackButton/base_type = &"Button"
+BackButton/colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+BackButton/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+BackButton/font_sizes/font_size = 13
+BackButton/fonts/font = SubResource("FV_int_400")
+BackButton/styles/focus = SubResource("SB_empty")
+BackButton/styles/hover = SubResource("SB_empty")
+BackButton/styles/normal = SubResource("SB_empty")
+BackButton/styles/pressed = SubResource("SB_empty")
+BackWideButton/base_type = &"Button"
+BackWideButton/colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+BackWideButton/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+BackWideButton/font_sizes/font_size = 14
+BackWideButton/fonts/font = SubResource("FV_osw_500_track")
+BackWideButton/styles/focus = SubResource("SB_empty")
+BackWideButton/styles/hover = SubResource("SB_back_wide_hover")
+BackWideButton/styles/normal = SubResource("SB_back_wide")
+BackWideButton/styles/pressed = SubResource("SB_back_wide_hover")
+Button/colors/font_color = Color(0.9255, 0.9333, 0.9569, 1)
+Button/colors/font_disabled_color = Color(0.298, 0.3294, 0.4078, 1)
+Button/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+Button/colors/font_pressed_color = Color(0.9098, 0.6392, 0.2392, 1)
+Button/font_sizes/font_size = 13
+Button/fonts/font = SubResource("FV_int_500_track")
+Button/styles/disabled = SubResource("SB_empty")
+Button/styles/focus = SubResource("SB_empty")
+Button/styles/hover = SubResource("SB_empty")
+Button/styles/normal = SubResource("SB_empty")
+Button/styles/pressed = SubResource("SB_empty")
+BuyButton/base_type = &"Button"
+BuyButton/colors/font_color = Color(0.102, 0.0706, 0.0235, 1)
+BuyButton/colors/font_disabled_color = Color(0.298, 0.3294, 0.4078, 1)
+BuyButton/colors/font_hover_color = Color(0.102, 0.0706, 0.0235, 1)
+BuyButton/font_sizes/font_size = 12
+BuyButton/fonts/font = SubResource("FV_osw_400")
+BuyButton/styles/disabled = SubResource("SB_buy_disabled")
+BuyButton/styles/focus = SubResource("SB_empty")
+BuyButton/styles/hover = SubResource("SB_buy_hover")
+BuyButton/styles/normal = SubResource("SB_buy")
+BuyButton/styles/pressed = SubResource("SB_buy_hover")
+CatRailButton/base_type = &"Button"
+CatRailButton/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+CatRailButton/colors/font_disabled_color = Color(0.3725, 0.8157, 0.7882, 1)
+CatRailButton/colors/font_hover_color = Color(0.5451, 0.5765, 0.6549, 1)
+CatRailButton/font_sizes/font_size = 12
+CatRailButton/fonts/font = SubResource("FV_int_400_track")
+CatRailButton/styles/disabled = SubResource("SB_cat_item_on")
+CatRailButton/styles/focus = SubResource("SB_empty")
+CatRailButton/styles/hover = SubResource("SB_cat_item")
+CatRailButton/styles/normal = SubResource("SB_cat_item")
+CatRailButton/styles/pressed = SubResource("SB_cat_item")
+CheckBox/colors/font_color = Color(0.9255, 0.9333, 0.9569, 1)
+CheckBox/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+CheckBox/colors/font_pressed_color = Color(0.9098, 0.6392, 0.2392, 1)
+CheckBox/font_sizes/font_size = 13
+CheckBox/fonts/font = SubResource("FV_int_400")
+CreditAmount/base_type = &"Label"
+CreditAmount/colors/font_color = Color(0.9098, 0.6392, 0.2392, 1)
+CreditAmount/font_sizes/font_size = 18
+CreditAmount/fonts/font = SubResource("FV_osw_400")
+CreditTag/base_type = &"Label"
+CreditTag/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+CreditTag/font_sizes/font_size = 10
+CreditTag/fonts/font = SubResource("FV_int_500_track")
+EndlessButton/base_type = &"Button"
+EndlessButton/colors/font_color = Color(0.102, 0.0706, 0.0235, 1)
+EndlessButton/colors/font_hover_color = Color(0.102, 0.0706, 0.0235, 1)
+EndlessButton/font_sizes/font_size = 14
+EndlessButton/fonts/font = SubResource("FV_osw_500_track")
+EndlessButton/styles/focus = SubResource("SB_empty")
+EndlessButton/styles/hover = SubResource("SB_endless_hover")
+EndlessButton/styles/normal = SubResource("SB_endless")
+EndlessButton/styles/pressed = SubResource("SB_endless_hover")
+GarageTitle/base_type = &"Label"
+GarageTitle/colors/font_color = Color(0.9255, 0.9333, 0.9569, 1)
+GarageTitle/font_sizes/font_size = 20
+GarageTitle/fonts/font = SubResource("FV_osw_600_track")
+GarageVehLabel/base_type = &"Label"
+GarageVehLabel/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+GarageVehLabel/font_sizes/font_size = 12
+GarageVehLabel/fonts/font = SubResource("FV_int_400")
+HScrollBar/styles/grabber = SubResource("SB_scroll_grabber")
+HScrollBar/styles/grabber_highlight = SubResource("SB_scroll_grabber_hover")
+HScrollBar/styles/grabber_pressed = SubResource("SB_scroll_grabber_pressed")
+HScrollBar/styles/scroll = SubResource("SB_scroll_track")
+HSlider/styles/grabber_area = SubResource("SB_slider_fill")
+HSlider/styles/grabber_area_highlight = SubResource("SB_slider_fill")
+HSlider/styles/slider = SubResource("SB_slider_track")
+IconBoxPanel/base_type = &"PanelContainer"
+IconBoxPanel/styles/panel = SubResource("SB_icon_box")
+Label/colors/font_color = Color(0.9255, 0.9333, 0.9569, 1)
+Label/font_sizes/font_size = 13
+Label/fonts/font = SubResource("FV_int_400")
+MaxedButton/base_type = &"Button"
+MaxedButton/colors/font_color = Color(0.3725, 0.8157, 0.7882, 1)
+MaxedButton/colors/font_disabled_color = Color(0.3725, 0.8157, 0.7882, 1)
+MaxedButton/font_sizes/font_size = 10
+MaxedButton/fonts/font = SubResource("FV_int_500_track")
+MaxedButton/styles/disabled = SubResource("SB_maxed")
+MaxedButton/styles/focus = SubResource("SB_empty")
+MaxedButton/styles/normal = SubResource("SB_maxed")
+MenuBackdrop/base_type = &"Panel"
+MenuBackdrop/styles/panel = SubResource("SB_menu_panel")
+MenuPanel/base_type = &"PanelContainer"
+MenuPanel/styles/panel = SubResource("SB_menu_panel")
+MenuPanelCompact/base_type = &"PanelContainer"
+MenuPanelCompact/styles/panel = SubResource("SB_menu_panel_compact")
+NavItemButton/base_type = &"Button"
+NavItemButton/colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+NavItemButton/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+NavItemButton/colors/font_pressed_color = Color(0.9255, 0.9333, 0.9569, 1)
+NavItemButton/font_sizes/font_size = 16
+NavItemButton/fonts/font = SubResource("FV_osw_500_track")
+NavItemButton/styles/disabled = SubResource("SB_nav_item")
+NavItemButton/styles/focus = SubResource("SB_empty")
+NavItemButton/styles/hover = SubResource("SB_nav_item")
+NavItemButton/styles/normal = SubResource("SB_nav_item")
+NavItemButton/styles/pressed = SubResource("SB_nav_item")
+NavItemCompactButton/base_type = &"Button"
+NavItemCompactButton/colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+NavItemCompactButton/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+NavItemCompactButton/colors/font_pressed_color = Color(0.9098, 0.6392, 0.2392, 1)
+NavItemCompactButton/font_sizes/font_size = 14
+NavItemCompactButton/fonts/font = SubResource("FV_osw_500_track")
+NavItemCompactButton/styles/disabled = SubResource("SB_nav_compact")
+NavItemCompactButton/styles/focus = SubResource("SB_empty")
+NavItemCompactButton/styles/hover = SubResource("SB_nav_compact_hover")
+NavItemCompactButton/styles/normal = SubResource("SB_nav_compact")
+NavItemCompactButton/styles/pressed = SubResource("SB_nav_compact_hover")
+NavItemDisabledButton/base_type = &"Button"
+NavItemDisabledButton/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+NavItemDisabledButton/colors/font_disabled_color = Color(0.298, 0.3294, 0.4078, 1)
+NavItemDisabledButton/font_sizes/font_size = 16
+NavItemDisabledButton/fonts/font = SubResource("FV_osw_500_track")
+NavItemDisabledButton/styles/disabled = SubResource("SB_nav_item")
+NavItemDisabledButton/styles/focus = SubResource("SB_empty")
+NavItemDisabledButton/styles/normal = SubResource("SB_nav_item")
+NavItemPrimaryButton/base_type = &"Button"
+NavItemPrimaryButton/colors/font_color = Color(0.9255, 0.9333, 0.9569, 1)
+NavItemPrimaryButton/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+NavItemPrimaryButton/colors/font_pressed_color = Color(0.9098, 0.6392, 0.2392, 1)
+NavItemPrimaryButton/font_sizes/font_size = 16
+NavItemPrimaryButton/fonts/font = SubResource("FV_osw_500_track")
+NavItemPrimaryButton/styles/disabled = SubResource("SB_nav_item_primary")
+NavItemPrimaryButton/styles/focus = SubResource("SB_empty")
+NavItemPrimaryButton/styles/hover = SubResource("SB_nav_item_primary_border")
+NavItemPrimaryButton/styles/normal = SubResource("SB_nav_item_primary_border")
+NavItemPrimaryButton/styles/pressed = SubResource("SB_nav_item_primary_border")
+NavStatKey/base_type = &"Label"
+NavStatKey/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+NavStatKey/font_sizes/font_size = 11
+NavStatKey/fonts/font = SubResource("FV_int_400_track")
+NavStatValue/base_type = &"Label"
+NavStatValue/colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+NavStatValue/font_sizes/font_size = 15
+NavStatValue/fonts/font = SubResource("FV_osw_400")
+PipOff/base_type = &"Panel"
+PipOff/styles/panel = SubResource("SB_pip_off")
+PipOn/base_type = &"Panel"
+PipOn/styles/panel = SubResource("SB_pip_on")
+SectionCatLabel/base_type = &"Label"
+SectionCatLabel/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+SectionCatLabel/font_sizes/font_size = 10
+SectionCatLabel/fonts/font = SubResource("FV_int_500_track")
+SellButton/base_type = &"Button"
+SellButton/colors/font_color = Color(0.102, 0.0706, 0.0235, 1)
+SellButton/colors/font_disabled_color = Color(0.1451, 0.1725, 0.2392, 1)
+SellButton/colors/font_hover_color = Color(0.102, 0.0706, 0.0235, 1)
+SellButton/font_sizes/font_size = 11
+SellButton/fonts/font = SubResource("FV_int_400")
+SellButton/styles/disabled = SubResource("SB_sell")
+SellButton/styles/focus = SubResource("SB_empty")
+SellButton/styles/hover = SubResource("SB_sell_hover")
+SellButton/styles/normal = SubResource("SB_sell")
+SellButton/styles/pressed = SubResource("SB_sell_hover")
+ToggleButton/base_type = &"Button"
+ToggleButton/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+ToggleButton/colors/font_disabled_color = Color(0.9098, 0.6392, 0.2392, 1)
+ToggleButton/colors/font_hover_color = Color(0.5451, 0.5765, 0.6549, 1)
+ToggleButton/font_sizes/font_size = 12
+ToggleButton/fonts/font = SubResource("FV_osw_500_track")
+ToggleButton/styles/disabled = SubResource("SB_toggle_on")
+ToggleButton/styles/focus = SubResource("SB_empty")
+ToggleButton/styles/hover = SubResource("SB_toggle_off")
+ToggleButton/styles/normal = SubResource("SB_toggle_off")
+ToggleButton/styles/pressed = SubResource("SB_toggle_off")
+UpgradeIconLabel/base_type = &"Label"
+UpgradeIconLabel/colors/font_color = Color(0.9098, 0.6392, 0.2392, 1)
+UpgradeIconLabel/font_sizes/font_size = 13
+UpgradeIconLabel/fonts/font = SubResource("FV_osw_500_track")
+UpgradeInfoDesc/base_type = &"Label"
+UpgradeInfoDesc/colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+UpgradeInfoDesc/font_sizes/font_size = 12
+UpgradeInfoDesc/fonts/font = SubResource("FV_int_400")
+UpgradeInfoEffect/base_type = &"Label"
+UpgradeInfoEffect/colors/font_color = Color(0.8235, 0.8431, 0.8902, 1)
+UpgradeInfoEffect/font_sizes/font_size = 12
+UpgradeInfoEffect/fonts/font = SubResource("FV_int_500_track")
+UpgradeInfoPanel/base_type = &"PanelContainer"
+UpgradeInfoPanel/styles/panel = SubResource("SB_upg_info")
+UpgradeMaxTag/base_type = &"Label"
+UpgradeMaxTag/colors/font_color = Color(0.3725, 0.8157, 0.7882, 1)
+UpgradeMaxTag/font_sizes/font_size = 9
+UpgradeMaxTag/fonts/font = SubResource("FV_int_500_track")
+UpgradeNameLabel/base_type = &"Label"
+UpgradeNameLabel/colors/font_color = Color(0.9255, 0.9333, 0.9569, 1)
+UpgradeNameLabel/font_sizes/font_size = 15
+UpgradeNameLabel/fonts/font = SubResource("FV_int_600")
+UpgradeRefundButton/base_type = &"Button"
+UpgradeRefundButton/colors/font_color = Color(0.5451, 0.5765, 0.6549, 1)
+UpgradeRefundButton/colors/font_disabled_color = Color(0.1451, 0.1725, 0.2392, 1)
+UpgradeRefundButton/colors/font_hover_color = Color(0.9255, 0.9333, 0.9569, 1)
+UpgradeRefundButton/font_sizes/font_size = 12
+UpgradeRefundButton/fonts/font = SubResource("FV_osw_400")
+UpgradeRefundButton/styles/disabled = SubResource("SB_refund")
+UpgradeRefundButton/styles/focus = SubResource("SB_empty")
+UpgradeRefundButton/styles/hover = SubResource("SB_refund_hover")
+UpgradeRefundButton/styles/normal = SubResource("SB_refund")
+UpgradeRefundButton/styles/pressed = SubResource("SB_refund_hover")
+UpgradeRowPanel/base_type = &"PanelContainer"
+UpgradeRowPanel/styles/panel = SubResource("SB_upg_row")
+UpgradeRowPanelHover/base_type = &"PanelContainer"
+UpgradeRowPanelHover/styles/panel = SubResource("SB_upg_row_hover")
+UpgradeTile/base_type = &"PanelContainer"
+UpgradeTile/styles/panel = SubResource("SB_upg_tile")
+UpgradeTileHover/base_type = &"PanelContainer"
+UpgradeTileHover/styles/panel = SubResource("SB_upg_tile_hover")
+UpgradeTilePlaceholder/base_type = &"Label"
+UpgradeTilePlaceholder/colors/font_color = Color(1, 1, 1, 1)
+UpgradeTilePlaceholder/font_sizes/font_size = 16
+UpgradeTilePlaceholder/fonts/font = SubResource("FV_osw_400")
+UpgradeTileSelected/base_type = &"PanelContainer"
+UpgradeTileSelected/styles/panel = SubResource("SB_upg_tile_selected")
+VScrollBar/styles/grabber = SubResource("SB_scroll_grabber")
+VScrollBar/styles/grabber_highlight = SubResource("SB_scroll_grabber_hover")
+VScrollBar/styles/grabber_pressed = SubResource("SB_scroll_grabber_pressed")
+VScrollBar/styles/scroll = SubResource("SB_scroll_track")
+WordmarkJp/base_type = &"Label"
+WordmarkJp/colors/font_color = Color(0.9098, 0.6392, 0.2392, 1)
+WordmarkJp/font_sizes/font_size = 11
+WordmarkJp/fonts/font = SubResource("FV_osw_600_track_wide")
+WordmarkSub/base_type = &"Label"
+WordmarkSub/colors/font_color = Color(0.298, 0.3294, 0.4078, 1)
+WordmarkSub/font_sizes/font_size = 11
+WordmarkSub/fonts/font = SubResource("FV_int_400")
+WordmarkTitle/base_type = &"Label"
+WordmarkTitle/colors/font_color = Color(0.9255, 0.9333, 0.9569, 1)
+WordmarkTitle/font_sizes/font_size = 34
+WordmarkTitle/fonts/font = SubResource("FV_osw_600_track")

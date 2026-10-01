@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CarProfile" format=3 uid="uid://do5wyajirepcw"]
+
+[ext_resource type="Script" uid="uid://dpngdj3jayytp" path="res://MAIN/cars/car_profile.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://dwhyu4gtqwyw5" path="res://assets/cars/coupe.glb" id="2_hull"]
+[ext_resource type="Script" uid="uid://cwu0qajodeldu" path="res://MAIN/cars/car_feel_config.gd" id="3_feel_script"]
+
+[sub_resource type="Resource" id="Resource_coupe_feel"]
+script = ExtResource("3_feel_script")
+
+[resource]
+script = ExtResource("1_script")
+id = "coupe"
+display_name = "Coupe"
+hull_scene = ExtResource("2_hull")
+feel = SubResource("Resource_coupe_feel")

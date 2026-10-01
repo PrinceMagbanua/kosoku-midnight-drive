@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/hud/gear_badge.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans-Bold.ttf" id="2_bold"]
+
+[node name="GearBadge" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 34.0
+mouse_filter = 2
+script = ExtResource("1_script")
+font = ExtResource("2_bold")

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CarProfile" format=3 uid="uid://btvayh5ftmhvx"]
+
+[ext_resource type="Script" uid="uid://dpngdj3jayytp" path="res://MAIN/cars/car_profile.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://c7go2dgqgxgsx" path="res://assets/cars/Kosoku_Cars_GLB/cars/Sports_01/Sports_01_Base.glb" id="2_hull"]
+[ext_resource type="Script" uid="uid://cwu0qajodeldu" path="res://MAIN/cars/car_feel_config.gd" id="3_feel_script"]
+
+[sub_resource type="Resource" id="Resource_sports_01_feel"]
+script = ExtResource("3_feel_script")
+
+[resource]
+script = ExtResource("1_script")
+id = "sports_01"
+display_name = "RAIDEN"
+hull_scene = ExtResource("2_hull")
+manifest_id = "Sports_01"
+default_paint = "PolygonStreetRacer_Veh_Tex_02_Race_Red.png"
+acceleration = 8
+top_speed = 8
+handling = 7
+braking = 6
+ground_trim = 0.2
+feel = SubResource("Resource_sports_01_feel")
+com_drop = 0.25

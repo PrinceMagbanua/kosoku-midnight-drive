@@ -1,0 +1,39 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/hud/elements/alert_stack.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans.ttf" id="2_reg"]
+
+[sub_resource type="FontVariation" id="FontVariation_track_sm"]
+base_font = ExtResource("2_reg")
+spacing_glyph = 1
+
+[node name="AlertStack" type="VBoxContainer"]
+offset_right = 23.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_script")
+
+[node name="AbsLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_track_sm")
+theme_override_font_sizes/font_size = 9
+text = "ABS"
+
+[node name="TcsLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_track_sm")
+theme_override_font_sizes/font_size = 9
+text = "TCS"
+
+[node name="EspLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_track_sm")
+theme_override_font_sizes/font_size = 9
+text = "ESP"

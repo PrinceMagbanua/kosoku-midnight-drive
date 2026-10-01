@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/hud/elements/side_arc.gd" id="1_script"]
+[ext_resource type="Script" path="res://UI/hud/hourglass_gauge.gd" id="2_hourglass"]
+
+[node name="SlowMoArc" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 244.0
+offset_bottom = 244.0
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Icon" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 41.0
+offset_top = 222.0
+offset_right = 52.0
+offset_bottom = 238.0
+mouse_filter = 2
+script = ExtResource("2_hourglass")
+value = 1.0
+fill_color = Color(0.945, 0.973, 0.988, 0.85)
+outline_color = Color(0.945, 0.973, 0.988, 0.85)
+outline_width = 1.5
+cap_width = 2.0

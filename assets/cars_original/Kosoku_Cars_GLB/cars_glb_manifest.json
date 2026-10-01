@@ -1,0 +1,808 @@
+{
+  "cars": {
+    "Sedan_01": {
+      "base": "cars/Sedan_01/Sedan_01_Base.glb",
+      "base_contains": [
+        "Boot",
+        "Door_LF",
+        "Door_LF_Glass",
+        "Door_LR",
+        "Door_LR_Glass_1",
+        "Door_LR_Glass_2",
+        "Door_RF",
+        "Door_RF_Glass",
+        "Door_RR",
+        "Door_RR_Glass_1",
+        "Door_RR_Glass_2",
+        "Engine_01",
+        "Gear_Stick_01",
+        "Gear_Stick_01_Stick",
+        "Glass",
+        "Seats_Front_01",
+        "Seats_Rear_01",
+        "SteeringW",
+        "Undercarriage_01",
+        "Wheel_fl",
+        "Wheel_fr",
+        "Wheel_rl",
+        "Wheel_rr"
+      ],
+      "slots": {
+        "Bonnet": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Bonnet_01.glb",
+            "02": "cars/Sedan_01/parts/Sedan_01_Bonnet_02.glb",
+            "03": "cars/Sedan_01/parts/Sedan_01_Bonnet_03.glb",
+            "04": "cars/Sedan_01/parts/Sedan_01_Bonnet_04.glb"
+          }
+        },
+        "Fenders": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Sedan_01/parts/Sedan_01_Fenders_02.glb",
+            "03": "cars/Sedan_01/parts/Sedan_01_Fenders_03.glb",
+            "04": "cars/Sedan_01/parts/Sedan_01_Fenders_04.glb"
+          }
+        },
+        "Front_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Front_Bumper_01.glb",
+            "02": "cars/Sedan_01/parts/Sedan_01_Front_Bumper_02.glb",
+            "03": "cars/Sedan_01/parts/Sedan_01_Front_Bumper_03.glb",
+            "04": "cars/Sedan_01/parts/Sedan_01_Front_Bumper_04.glb"
+          }
+        },
+        "Light_Covers": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Light_Covers_01.glb"
+          }
+        },
+        "Rear_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Rear_Bumper_01.glb",
+            "02": "cars/Sedan_01/parts/Sedan_01_Rear_Bumper_02.glb",
+            "03": "cars/Sedan_01/parts/Sedan_01_Rear_Bumper_03.glb",
+            "04": "cars/Sedan_01/parts/Sedan_01_Rear_Bumper_04.glb"
+          }
+        },
+        "Rollcage": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Rollcage_01.glb"
+          }
+        },
+        "Roof_Scoop": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Roof_Scoop_01.glb"
+          }
+        },
+        "Side_Skirts": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Sedan_01/parts/Sedan_01_Side_Skirts_02.glb",
+            "03": "cars/Sedan_01/parts/Sedan_01_Side_Skirts_03.glb",
+            "04": "cars/Sedan_01/parts/Sedan_01_Side_Skirts_04.glb"
+          }
+        },
+        "Spoiler": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Spoiler_01.glb",
+            "02": "cars/Sedan_01/parts/Sedan_01_Spoiler_02.glb"
+          }
+        },
+        "Undercarriage": {
+          "required": false,
+          "stock_in_base": [
+            "Undercarriage_01"
+          ],
+          "variants": {
+            "02": "cars/Sedan_01/parts/Sedan_01_Undercarriage_02.glb",
+            "03": "cars/Sedan_01/parts/Sedan_01_Undercarriage_03.glb"
+          }
+        },
+        "Windscreen_Sticker": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sedan_01/parts/Sedan_01_Windscreen_Sticker_01.glb"
+          }
+        }
+      },
+      "presets": {
+        "Preset_01": [
+          "Bonnet_01",
+          "Front_Bumper_01",
+          "Rear_Bumper_01",
+          "Rear_Bumper_01_Exhaust"
+        ],
+        "Preset_02": [
+          "Bonnet_02",
+          "Fenders_02",
+          "Fenders_02_Door_L",
+          "Fenders_02_Door_R",
+          "Front_Bumper_02",
+          "Rear_Bumper_02",
+          "Rear_Bumper_02_Exhaust",
+          "Rollcage_01",
+          "Side_Skirts_02",
+          "Spoiler_01",
+          "Windscreen_Sticker_01"
+        ],
+        "Preset_03": [
+          "Bonnet_03",
+          "Fenders_03",
+          "Front_Bumper_03",
+          "Light_Covers_01",
+          "Rear_Bumper_03",
+          "Rollcage_01",
+          "Roof_Scoop_01",
+          "Side_Skirts_03",
+          "Undercarriage_02"
+        ],
+        "Preset_04": [
+          "Bonnet_04",
+          "Fenders_04",
+          "Fenders_04_Door_L",
+          "Fenders_04_Door_R",
+          "Front_Bumper_04",
+          "Rear_Bumper_04",
+          "Side_Skirts_04",
+          "Spoiler_02",
+          "Undercarriage_03"
+        ],
+        "Preset_05": [
+          "Bonnet_01",
+          "Front_Bumper_01",
+          "Rear_Bumper_01",
+          "Rear_Bumper_01_Exhaust"
+        ]
+      }
+    },
+    "Sports_01": {
+      "base": "cars/Sports_01/Sports_01_Base.glb",
+      "base_contains": [
+        "Boot_01",
+        "Spoiler_01",
+        "Door_L",
+        "Door_L_Glass",
+        "Door_R",
+        "Door_R_Glass",
+        "Engine_01",
+        "Gear_Stick_01",
+        "Glass",
+        "Seats_01",
+        "SteeringW",
+        "Undercarriage_01",
+        "Wheel_fl",
+        "Wheel_fr",
+        "Wheel_rl",
+        "Wheel_rr"
+      ],
+      "slots": {
+        "Bonnet": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Bonnet_01.glb",
+            "02": "cars/Sports_01/parts/Sports_01_Bonnet_02.glb",
+            "03": "cars/Sports_01/parts/Sports_01_Bonnet_03.glb",
+            "04": "cars/Sports_01/parts/Sports_01_Bonnet_04.glb"
+          }
+        },
+        "Fenders": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Sports_01/parts/Sports_01_Fenders_02.glb",
+            "03": "cars/Sports_01/parts/Sports_01_Fenders_03.glb",
+            "04": "cars/Sports_01/parts/Sports_01_Fenders_04.glb"
+          }
+        },
+        "Front_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Front_Bumper_01.glb",
+            "02": "cars/Sports_01/parts/Sports_01_Front_Bumper_02.glb",
+            "03": "cars/Sports_01/parts/Sports_01_Front_Bumper_03.glb",
+            "04": "cars/Sports_01/parts/Sports_01_Front_Bumper_04.glb"
+          }
+        },
+        "Light_Covers": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Light_Covers_01.glb"
+          }
+        },
+        "Rear_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Rear_Bumper_01.glb",
+            "02": "cars/Sports_01/parts/Sports_01_Rear_Bumper_02.glb",
+            "03": "cars/Sports_01/parts/Sports_01_Rear_Bumper_03.glb",
+            "04": "cars/Sports_01/parts/Sports_01_Rear_Bumper_04.glb"
+          }
+        },
+        "Rollcage": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Rollcage_01.glb"
+          }
+        },
+        "Roof_Scoop": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Roof_Scoop_01.glb"
+          }
+        },
+        "Side_Skirts": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Side_Skirts_01.glb",
+            "02": "cars/Sports_01/parts/Sports_01_Side_Skirts_02.glb",
+            "03": "cars/Sports_01/parts/Sports_01_Side_Skirts_03.glb",
+            "04": "cars/Sports_01/parts/Sports_01_Side_Skirts_04.glb"
+          }
+        },
+        "Spoiler": {
+          "required": false,
+          "stock_in_base": [
+            "Spoiler_01"
+          ],
+          "variants": {
+            "02": "cars/Sports_01/parts/Sports_01_Spoiler_02.glb",
+            "03": "cars/Sports_01/parts/Sports_01_Spoiler_03.glb",
+            "04": "cars/Sports_01/parts/Sports_01_Spoiler_04.glb"
+          }
+        },
+        "Undercarriage": {
+          "required": false,
+          "stock_in_base": [
+            "Undercarriage_01"
+          ],
+          "variants": {
+            "02": "cars/Sports_01/parts/Sports_01_Undercarriage_02.glb",
+            "03": "cars/Sports_01/parts/Sports_01_Undercarriage_03.glb"
+          }
+        },
+        "Windscreen_Sticker": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Sports_01/parts/Sports_01_Windscreen_Sticker_01.glb"
+          }
+        }
+      },
+      "presets": {
+        "Preset_01": [
+          "Bonnet_01",
+          "Front_Bumper_01",
+          "Rear_Bumper_01",
+          "Side_Skirts_01"
+        ],
+        "Preset_02": [
+          "Bonnet_02",
+          "Fenders_02",
+          "Front_Bumper_02",
+          "Rear_Bumper_02",
+          "Rollcage_01",
+          "Side_Skirts_02",
+          "Spoiler_02",
+          "Windscreen_Sticker_01"
+        ],
+        "Preset_03": [
+          "Bonnet_03",
+          "Fenders_03",
+          "Front_Bumper_03",
+          "Light_Covers_01",
+          "Rear_Bumper_03",
+          "Rollcage_01",
+          "Roof_Scoop_01",
+          "Side_Skirts_03",
+          "Spoiler_03",
+          "Undercarriage_02"
+        ],
+        "Preset_04": [
+          "Bonnet_04",
+          "Fenders_04",
+          "Front_Bumper_04",
+          "Rear_Bumper_04",
+          "Side_Skirts_04",
+          "Spoiler_04",
+          "Undercarriage_03"
+        ]
+      }
+    },
+    "Hatch_01": {
+      "base": "cars/Hatch_01/Hatch_01_Base.glb",
+      "base_contains": [
+        "Boot",
+        "Boot_Glass",
+        "Door_L",
+        "Door_L_Glass_1",
+        "Door_L_Glass_2",
+        "Door_R",
+        "Door_R_Glass_1",
+        "Door_R_Glass_2",
+        "Engine_01",
+        "Glass",
+        "Seats_01_Front",
+        "Seats_01_Rear",
+        "SteeringW",
+        "Undercarriage_01",
+        "Wheel_fl",
+        "Wheel_fr",
+        "Wheel_rl",
+        "Wheel_rr"
+      ],
+      "slots": {
+        "Bonnet": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Hatch_01/parts/Hatch_01_Bonnet_01.glb",
+            "02": "cars/Hatch_01/parts/Hatch_01_Bonnet_02.glb",
+            "03": "cars/Hatch_01/parts/Hatch_01_Bonnet_03.glb",
+            "04": "cars/Hatch_01/parts/Hatch_01_Bonnet_04.glb"
+          }
+        },
+        "Fenders": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Hatch_01/parts/Hatch_01_Fenders_02.glb",
+            "03": "cars/Hatch_01/parts/Hatch_01_Fenders_03.glb",
+            "04": "cars/Hatch_01/parts/Hatch_01_Fenders_04.glb"
+          }
+        },
+        "Front_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Hatch_01/parts/Hatch_01_Front_Bumper_01.glb",
+            "02": "cars/Hatch_01/parts/Hatch_01_Front_Bumper_02.glb",
+            "03": "cars/Hatch_01/parts/Hatch_01_Front_Bumper_03.glb",
+            "04": "cars/Hatch_01/parts/Hatch_01_Front_Bumper_04.glb"
+          }
+        },
+        "Light_Covers": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Hatch_01/parts/Hatch_01_Light_Covers_01.glb"
+          }
+        },
+        "Rear_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Hatch_01/parts/Hatch_01_Rear_Bumper_01.glb",
+            "02": "cars/Hatch_01/parts/Hatch_01_Rear_Bumper_02.glb",
+            "03": "cars/Hatch_01/parts/Hatch_01_Rear_Bumper_03.glb",
+            "04": "cars/Hatch_01/parts/Hatch_01_Rear_Bumper_04.glb"
+          }
+        },
+        "Rollcage": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Hatch_01/parts/Hatch_01_Rollcage_01.glb"
+          }
+        },
+        "Roof_Scoop": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Hatch_01/parts/Hatch_01_Roof_Scoop_01.glb"
+          }
+        },
+        "Side_Skirts": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "03": "cars/Hatch_01/parts/Hatch_01_Side_Skirts_03.glb",
+            "04": "cars/Hatch_01/parts/Hatch_01_Side_Skirts_04.glb"
+          }
+        },
+        "Spoiler": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Hatch_01/parts/Hatch_01_Spoiler_02.glb",
+            "03": "cars/Hatch_01/parts/Hatch_01_Spoiler_03.glb",
+            "04": "cars/Hatch_01/parts/Hatch_01_Spoiler_04.glb"
+          }
+        },
+        "Undercarriage": {
+          "required": false,
+          "stock_in_base": [
+            "Undercarriage_01"
+          ],
+          "variants": {
+            "02": "cars/Hatch_01/parts/Hatch_01_Undercarriage_02.glb",
+            "03": "cars/Hatch_01/parts/Hatch_01_Undercarriage_03.glb"
+          }
+        },
+        "Windscreen_Sticker": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Hatch_01/parts/Hatch_01_Windscreen_Sticker_01.glb"
+          }
+        }
+      },
+      "presets": {
+        "Preset_01": [
+          "Bonnet_01",
+          "Front_Bumper_01",
+          "Rear_Bumper_01",
+          "Rear_Bumper_01_Exhaust"
+        ],
+        "Preset_02": [
+          "Bonnet_02",
+          "Fenders_02",
+          "Front_Bumper_02",
+          "Rear_Bumper_02",
+          "Rear_Bumper_02_Exhaust",
+          "Rollcage_01",
+          "Spoiler_02",
+          "Windscreen_Sticker_01"
+        ],
+        "Preset_03": [
+          "Bonnet_03",
+          "Fenders_03",
+          "Front_Bumper_03",
+          "Light_Covers_01",
+          "Rear_Bumper_03",
+          "Rear_Bumper_03_Exhaust",
+          "Rollcage_01",
+          "Roof_Scoop_01",
+          "Side_Skirts_03",
+          "Spoiler_03",
+          "Undercarriage_02",
+          "Windscreen_Sticker_01"
+        ],
+        "Preset_04": [
+          "Bonnet_04",
+          "Fenders_04",
+          "Front_Bumper_04",
+          "Rear_Bumper_04",
+          "Side_Skirts_04",
+          "Spoiler_04"
+        ]
+      }
+    },
+    "Muscle_01": {
+      "base": "cars/Muscle_01/Muscle_01_Base.glb",
+      "base_contains": [
+        "Boot",
+        "Door_L",
+        "Door_L_Glass_1",
+        "Door_L_Glass_2",
+        "Door_R",
+        "Door_R_Glass_1",
+        "Door_R_Glass_2",
+        "Engine_01",
+        "Gear_Stick_01",
+        "Seats_01",
+        "SteeringW",
+        "Undercarriage_01",
+        "Wheel_fl",
+        "Wheel_fr",
+        "Wheel_rl",
+        "Wheel_rr"
+      ],
+      "slots": {
+        "Bonnet": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Bonnet_01.glb",
+            "02": "cars/Muscle_01/parts/Muscle_01_Bonnet_02.glb",
+            "03": "cars/Muscle_01/parts/Muscle_01_Bonnet_03.glb",
+            "04": "cars/Muscle_01/parts/Muscle_01_Bonnet_04.glb"
+          }
+        },
+        "Exhaust": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Exhaust_01.glb",
+            "02": "cars/Muscle_01/parts/Muscle_01_Exhaust_02.glb",
+            "03": "cars/Muscle_01/parts/Muscle_01_Exhaust_03.glb"
+          }
+        },
+        "Fenders": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Muscle_01/parts/Muscle_01_Fenders_02.glb",
+            "03": "cars/Muscle_01/parts/Muscle_01_Fenders_03.glb"
+          }
+        },
+        "Front_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Front_Bumper_01.glb",
+            "02": "cars/Muscle_01/parts/Muscle_01_Front_Bumper_02.glb",
+            "03": "cars/Muscle_01/parts/Muscle_01_Front_Bumper_03.glb",
+            "04": "cars/Muscle_01/parts/Muscle_01_Front_Bumper_04.glb"
+          }
+        },
+        "Light_Covers": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Light_Covers_01.glb"
+          }
+        },
+        "Louvers": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Louvers_01.glb"
+          }
+        },
+        "Nudge_Bar": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Nudge_Bar_01.glb"
+          }
+        },
+        "Rear_Bumper": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Rear_Bumper_01.glb",
+            "02": "cars/Muscle_01/parts/Muscle_01_Rear_Bumper_02.glb",
+            "04": "cars/Muscle_01/parts/Muscle_01_Rear_Bumper_04.glb"
+          }
+        },
+        "Rollcage": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Rollcage_01.glb"
+          }
+        },
+        "Roof": {
+          "required": true,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Roof_01.glb",
+            "02": "cars/Muscle_01/parts/Muscle_01_Roof_02.glb",
+            "03": "cars/Muscle_01/parts/Muscle_01_Roof_03.glb"
+          }
+        },
+        "Side_Skirts": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Muscle_01/parts/Muscle_01_Side_Skirts_02.glb"
+          }
+        },
+        "Spoiler": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Muscle_01/parts/Muscle_01_Spoiler_02.glb",
+            "03": "cars/Muscle_01/parts/Muscle_01_Spoiler_03.glb",
+            "04": "cars/Muscle_01/parts/Muscle_01_Spoiler_04.glb"
+          }
+        },
+        "Spoiler_Boot": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "02": "cars/Muscle_01/parts/Muscle_01_Spoiler_Boot_02.glb"
+          }
+        },
+        "Undercarriage": {
+          "required": false,
+          "stock_in_base": [
+            "Undercarriage_01"
+          ],
+          "variants": {
+            "02": "cars/Muscle_01/parts/Muscle_01_Undercarriage_02.glb",
+            "03": "cars/Muscle_01/parts/Muscle_01_Undercarriage_03.glb"
+          }
+        },
+        "Wheelie_Bars": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Wheelie_Bars_01.glb"
+          }
+        },
+        "Windscreen_Sticker": {
+          "required": false,
+          "stock_in_base": [],
+          "variants": {
+            "01": "cars/Muscle_01/parts/Muscle_01_Windscreen_Sticker_01.glb"
+          }
+        }
+      },
+      "presets": {
+        "Preset_01": [
+          "Bonnet_01",
+          "Exhaust_01",
+          "Front_Bumper_01",
+          "Rear_Bumper_01",
+          "Roof_03",
+          "Roof_03_Glass"
+        ],
+        "Preset_02": [
+          "Bonnet_02",
+          "Exhaust_02",
+          "Fenders_02",
+          "Front_Bumper_02",
+          "Rear_Bumper_02",
+          "Roof_01",
+          "Roof_01_Glass",
+          "Side_Skirts_02",
+          "Spoiler_02",
+          "Spoiler_02_Boot"
+        ],
+        "Preset_03": [
+          "Bonnet_03",
+          "Exhaust_03",
+          "Fenders_03",
+          "Front_Bumper_03",
+          "Front_Bumper_03_Light_Covers",
+          "Louvers_01",
+          "Rollcage_01",
+          "Roof_01",
+          "Roof_01_Glass",
+          "Spoiler_03",
+          "Windscreen_Sticker_01"
+        ],
+        "Preset_04": [
+          "Bonnet_04",
+          "Exhaust_03",
+          "Front_Bumper_04",
+          "Light_Covers_01",
+          "Nudge_Bar_01",
+          "Rear_Bumper_04",
+          "Rollcage_01",
+          "Roof_01",
+          "Roof_01_Glass",
+          "Spoiler_04",
+          "Undercarriage_02"
+        ]
+      }
+    }
+  },
+  "wheels": [
+    "shared/wheels/Wheel_01.glb",
+    "shared/wheels/Wheel_02.glb",
+    "shared/wheels/Wheel_03.glb",
+    "shared/wheels/Wheel_04.glb",
+    "shared/wheels/Wheel_05.glb",
+    "shared/wheels/Wheel_06.glb",
+    "shared/wheels/Wheel_07.glb",
+    "shared/wheels/Wheel_08.glb",
+    "shared/wheels/Wheel_09.glb",
+    "shared/wheels/Wheel_10.glb",
+    "shared/wheels/Wheel_11.glb",
+    "shared/wheels/Wheel_12.glb",
+    "shared/wheels/Wheel_13.glb",
+    "shared/wheels/Wheel_14.glb",
+    "shared/wheels/Wheel_15.glb",
+    "shared/wheels/Wheel_16.glb",
+    "shared/wheels/Wheel_17.glb",
+    "shared/wheels/Wheel_18.glb",
+    "shared/wheels/Wheel_19.glb",
+    "shared/wheels/Wheel_20.glb",
+    "shared/wheels/Wheel_21.glb",
+    "shared/wheels/Wheel_22.glb",
+    "shared/wheels/Wheel_23.glb",
+    "shared/wheels/Wheel_24.glb",
+    "shared/wheels/Wheel_25.glb",
+    "shared/wheels/Wheel_26.glb",
+    "shared/wheels/Wheel_27.glb",
+    "shared/wheels/Wheel_28.glb",
+    "shared/wheels/Wheel_29.glb",
+    "shared/wheels/Wheel_30.glb"
+  ],
+  "tyres": [
+    "shared/tyres/Tyre_01.glb",
+    "shared/tyres/Tyre_02.glb",
+    "shared/tyres/Tyre_03.glb",
+    "shared/tyres/Tyre_04.glb",
+    "shared/tyres/Tyre_05.glb",
+    "shared/tyres/Tyre_06.glb",
+    "shared/tyres/Tyre_07.glb"
+  ],
+  "paint": {
+    "material_slots": {
+      "Paint": "body + body parts (swap albedo)",
+      "Base": "PolygonStreetRacer_Texture_01_A (interior, attachments)",
+      "Glass": "no texture, transparent"
+    },
+    "palette_atlases": [
+      "PolygonStreetRacer_Texture_01_A.png",
+      "PolygonStreetRacer_Texture_01_B.png",
+      "PolygonStreetRacer_Texture_01_C.png",
+      "PolygonStreetRacer_Texture_02_A.png",
+      "PolygonStreetRacer_Texture_02_B.png",
+      "PolygonStreetRacer_Texture_02_C.png",
+      "PolygonStreetRacer_Texture_03_A.png",
+      "PolygonStreetRacer_Texture_03_B.png",
+      "PolygonStreetRacer_Texture_03_C.png",
+      "PolygonStreetRacer_Texture_04_A.png",
+      "PolygonStreetRacer_Texture_04_B.png",
+      "PolygonStreetRacer_Texture_04_C.png"
+    ],
+    "vinyls": [
+      "PolygonStreetRacer_Veh_Tex_01_Race_Purple.png",
+      "PolygonStreetRacer_Veh_Tex_02_Race_Red.png",
+      "PolygonStreetRacer_Veh_Tex_03_Carbon_Fibre.png",
+      "PolygonStreetRacer_Veh_Tex_04_Digital_Square.png",
+      "PolygonStreetRacer_Veh_Tex_05_Race_Grey.png",
+      "PolygonStreetRacer_Veh_Tex_06_Classic_Black.png",
+      "PolygonStreetRacer_Veh_Tex_07_Race_Yellow.png",
+      "PolygonStreetRacer_Veh_Tex_08_Race_Green.png",
+      "PolygonStreetRacer_Veh_Tex_09_Patriot.png",
+      "PolygonStreetRacer_Veh_Tex_10_Rip_And_Tear.png",
+      "PolygonStreetRacer_Veh_Tex_11_Flames.png",
+      "PolygonStreetRacer_Veh_Tex_12_Digital_Triangle.png",
+      "PolygonStreetRacer_Veh_Tex_13_Race_Blue.png",
+      "PolygonStreetRacer_Veh_Tex_14_Tiger.png",
+      "PolygonStreetRacer_Veh_Tex_15_Paint_Drip.png",
+      "PolygonStreetRacer_Veh_Tex_16_Pup.png",
+      "PolygonStreetRacer_Veh_Tex_17_Camo.png",
+      "PolygonStreetRacer_Veh_Tex_18_Police_Black.png",
+      "PolygonStreetRacer_Veh_Tex_19_Police_White.png",
+      "PolygonStreetRacer_Veh_Tex_20_Port.png",
+      "PolygonStreetRacer_Veh_Tex_21_Taxi.png",
+      "PolygonStreetRacer_Veh_Tex_22_Apoco_Blue.png",
+      "PolygonStreetRacer_Veh_Tex_22_Apoco_Orange.png",
+      "PolygonStreetRacer_Veh_Tex_23_Apoco_Black.png",
+      "PolygonStreetRacer_Veh_Tex_24_Rust.png",
+      "PolygonStreetRacer_Veh_Tex_25_Rust_Painted_White.png",
+      "PolygonStreetRacer_Veh_Tex_26_Rust_Painted_Red.png"
+    ],
+    "pearl_needs_custom_shader": [
+      "PolygonStreetRacer_Veh_Tex_Pearl_01_Blue.png",
+      "PolygonStreetRacer_Veh_Tex_Pearl_02_Cream.png",
+      "PolygonStreetRacer_Veh_Tex_Pearl_03_Red.png",
+      "PolygonStreetRacer_Veh_Tex_Pearl_04_Green.png",
+      "PolygonStreetRacer_Veh_Tex_Pearl_05_Green.png",
+      "PolygonStreetRacer_Veh_Tex_Pearl_06_Purple.png"
+    ],
+    "stripes": [
+      "PolygonStreetRacer_Veh_Tex_Stripes_01.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_02.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_03.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_04.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_05.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_06.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_07.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_08.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_09.png",
+      "PolygonStreetRacer_Veh_Tex_Stripes_10.png"
+    ]
+  }
+}

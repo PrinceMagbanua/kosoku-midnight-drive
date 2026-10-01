@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KŌSOKU — UI Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0d14;
+    --bg-road:#0c0f18;
+    --panel:#12161f;
+    --panel-alt:#171c28;
+    --panel-raised:#1c2230;
+    --border:#252c3d;
+    --border-soft:#1a2030;
+    --accent:#e8a33d;
+    --accent-dim:#8a6a34;
+    --accent-soft:rgba(232,163,61,.12);
+    --cool:#5fd0c9;
+    --cool-soft:rgba(95,208,201,.12);
+    --danger:#e2604a;
+    --text:#eceef4;
+    --text-dim:#8b93a7;
+    --text-faint:#4c5468;
+    --font-display:'Oswald',sans-serif;
+    --font-body:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#050608;
+    font-family:var(--font-body);
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:28px 16px 60px;
+    min-height:100vh;
+  }
+
+  /* ---- chrome (not part of the game, just this mockup) ---- */
+  .mockup-head{ text-align:center; margin-bottom:18px; max-width:640px; }
+  .mockup-head h1{ font-family:var(--font-display); font-weight:600; font-size:15px; letter-spacing:.14em; color:var(--text-dim); text-transform:uppercase; }
+  .mockup-head p{ font-size:12.5px; color:var(--text-faint); margin-top:4px; }
+  .tabs{ display:flex; gap:6px; margin-bottom:18px; background:#0c0f16; border:1px solid var(--border-soft); padding:4px; border-radius:8px; }
+  .tabs button{
+    font-family:var(--font-body); font-weight:600; font-size:12.5px; color:var(--text-dim);
+    background:transparent; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;
+    letter-spacing:.02em; transition:background .15s, color .15s;
+  }
+  .tabs button.active{ background:var(--panel-raised); color:var(--accent); }
+  .tabs button:hover:not(.active){ color:var(--text); }
+
+  .frame{
+    width:1020px; max-width:94vw; aspect-ratio:16/9;
+    background:var(--bg); border:1px solid #1a1f2b; border-radius:10px;
+    overflow:hidden; position:relative;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
+  }
+  .screen{ position:absolute; inset:0; display:none; }
+  .screen.active{ display:flex; }
+
+  /* corner-cut panel utility — the game's recurring shape language */
+  .cut{ clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)); }
+  .cut-sm{ clip-path:polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px)); }
+
+  /* =========================================================
+     MAIN MENU
+     ========================================================= */
+  .main-menu{ background:
+      radial-gradient(120% 90% at 78% 40%, #141a26 0%, var(--bg) 55%),
+      var(--bg);
+  }
+  .nav-col{
+    width:50%; flex-shrink:0; display:flex; flex-direction:column;
+    padding:30px 40px; border-right:1px solid var(--border-soft);
+    background:linear-gradient(180deg, #0d1119, #0a0d14);
+  }
+  .wordmark{ line-height:1; }
+  .wordmark .jp{ font-family:var(--font-display); font-size:11px; letter-spacing:.3em; color:var(--accent); text-transform:uppercase; }
+  .wordmark h1{ font-family:var(--font-display); font-size:34px; font-weight:600; letter-spacing:.05em; margin-top:4px; }
+  .wordmark .sub{ font-size:11.5px; color:var(--text-faint); margin-top:6px; letter-spacing:.04em; }
+
+  .nav-list{ margin-top:44px; display:flex; flex-direction:column; }
+  .nav-item{
+    display:flex; align-items:center; gap:14px; padding:13px 4px;
+    border-bottom:1px solid var(--border-soft); cursor:pointer; position:relative;
+    color:var(--text-dim); transition:color .15s, transform .2s cubic-bezier(.34,1.56,.64,1), gap .2s ease;
+  }
+  .nav-item:first-child{ border-top:1px solid var(--border-soft); }
+  .nav-item .idx{ font-family:var(--font-display); font-size:11px; color:var(--text-faint); width:16px; transition:color .15s; }
+  .nav-item .label{ font-family:var(--font-display); font-size:16px; letter-spacing:.06em; font-weight:500; }
+  .nav-item.primary{ color:var(--text); }
+  .nav-item.primary .idx{ color:var(--accent); }
+  .nav-item.primary::before{
+    content:''; position:absolute; left:-26px; top:0; bottom:0; width:3px; background:var(--accent);
+  }
+  .nav-item:hover{ color:var(--text); transform:translateX(10px); gap:18px; }
+  .nav-item:hover .idx{ color:var(--accent); }
+  .nav-item:active{ transform:translateX(6px) scale(.98); transition-duration:.06s; }
+
+  .nav-foot{ margin-top:auto; display:flex; flex-direction:column; gap:14px; }
+  .stat-line{ display:flex; justify-content:space-between; align-items:baseline; }
+  .stat-line .k{ font-size:11px; color:var(--text-faint); letter-spacing:.08em; text-transform:uppercase; }
+  .stat-line .v{ font-family:var(--font-display); font-size:15px; color:var(--text-dim); }
+  .credit-pill{
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--panel); border:1px solid var(--border); padding:10px 14px; border-radius:7px;
+  }
+  .credit-pill .amt{ font-family:var(--font-display); font-size:18px; color:var(--accent); }
+  .credit-pill .tag{ font-size:10.5px; color:var(--text-faint); letter-spacing:.1em; text-transform:uppercase; }
+
+  /* Right half — intentionally EMPTY. This is where the real 3D
+     viewport / camera renders in Godot; no Control paints here. */
+  .viewport-empty{ flex:1; }
+
+  /* =========================================================
+     GARAGE — 50/50 split, same as main menu, so the camera only
+     pans/reframes between screens instead of the UI resizing it
+     ========================================================= */
+  /* =========================================================
+     GARAGE — mirrored 50/50 split: empty viewport LEFT, UI panel
+     RIGHT (Main Menu is the opposite: UI left, viewport right)
+     ========================================================= */
+  .garage{
+    background:
+      radial-gradient(120% 90% at 22% 40%, #141a26 0%, var(--bg) 55%),
+      var(--bg);
+  }
+  .garage-panel{
+    width:50%; flex-shrink:0; display:flex; flex-direction:column;
+    border-left:1px solid var(--border-soft);
+    background:linear-gradient(180deg, #0d1119, #0a0d14);
+    overflow:hidden;
+  }
+
+  .garage-top{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 30px 16px; border-bottom:1px solid var(--border-soft);
+  }
+  .back-btn{ display:flex; align-items:center; gap:9px; color:var(--text-dim); font-size:13px; cursor:pointer; transition:transform .15s ease, color .15s; }
+  .back-btn:hover{ color:var(--text); transform:translateX(-4px); }
+  .back-btn .chev{ width:8px; height:8px; border-left:2px solid var(--text-dim); border-bottom:2px solid var(--text-dim); transform:rotate(45deg); }
+  .garage-title{ font-family:var(--font-display); font-size:20px; letter-spacing:.05em; }
+  .garage-title .veh{ color:var(--text-faint); font-size:12px; font-weight:400; display:block; margin-top:2px; letter-spacing:.06em; }
+
+  .trans-toggle{ display:flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; }
+  .trans-toggle button{ font-family:var(--font-display); font-size:12px; letter-spacing:.08em; padding:7px 15px; background:var(--panel); color:var(--text-faint); border:none; cursor:pointer; transition:transform .15s ease; }
+  .trans-toggle button.on{ background:var(--accent-soft); color:var(--accent); }
+  .trans-toggle button:hover{ transform:scale(1.05); }
+
+  .garage-sub{ display:flex; align-items:center; justify-content:space-between; padding:14px 30px 16px; border-bottom:1px solid var(--border-soft); }
+  .garage-credit{ display:flex; align-items:center; gap:8px; }
+  .garage-credit .amt{ font-family:var(--font-display); font-size:20px; color:var(--accent); }
+
+  .garage-body{ flex:1; display:flex; overflow:hidden; }
+  .cat-rail{ width:130px; flex-shrink:0; border-right:1px solid var(--border-soft); padding:16px 0; }
+  .cat-item{ padding:10px 18px; font-size:12px; color:var(--text-faint); letter-spacing:.04em; cursor:pointer; border-left:2px solid transparent; transition:transform .15s ease, color .15s; }
+  .cat-item.on{ color:var(--cool); border-left-color:var(--cool); background:var(--cool-soft); }
+  .cat-item:hover:not(.on){ color:var(--text-dim); transform:translateX(4px); }
+
+  .upgrade-list{ flex:1; overflow-y:auto; padding:14px 18px; display:flex; flex-direction:column; gap:7px; }
+  .cat-label{ font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint); margin:10px 2px 2px; }
+  .cat-label:first-child{ margin-top:2px; }
+
+  .upg-row{
+    display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+    background:var(--panel); border:1px solid var(--border-soft); border-radius:8px; padding:11px 13px;
+    transition:transform .18s cubic-bezier(.34,1.56,.64,1), border-color .15s, background .15s;
+  }
+  .upg-row:hover{ transform:translateX(5px); border-color:var(--accent-dim); background:var(--panel-alt); }
+  .upg-icon{ width:30px; height:30px; border-radius:7px; background:var(--panel-raised); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--accent); }
+  .upg-icon svg{ width:15px; height:15px; }
+  .upg-main{ flex:1 1 auto; min-width:90px; }
+  .upg-main .name{ font-size:12.5px; font-weight:600; }
+  .upg-main .pips{ display:flex; gap:3px; margin-top:6px; }
+  .pip{ width:14px; height:4px; border-radius:2px; background:var(--border); }
+  .pip.on{ background:var(--accent); }
+  .upg-actions{ display:flex; align-items:center; gap:6px; flex-shrink:0; margin-left:auto; }
+  .btn-sell{ font-size:11px; color:var(--text-faint); background:transparent; border:1px solid var(--border); padding:7px 10px; border-radius:6px; cursor:pointer; transition:transform .15s cubic-bezier(.34,1.56,.64,1), color .15s, border-color .15s; }
+  .btn-sell:hover{ color:var(--danger); border-color:var(--danger); transform:translateY(-2px) scale(1.05); }
+  .btn-sell:active{ transform:scale(.94); transition-duration:.06s; }
+  .btn-buy{ font-family:var(--font-display); font-size:12px; letter-spacing:.02em; color:#1a1206; background:var(--accent); border:none; padding:7px 12px; border-radius:6px; cursor:pointer; white-space:nowrap; transition:transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .15s ease, background .15s ease; }
+  .btn-buy:hover{ background:#f2b354; transform:translateY(-3px) scale(1.08); box-shadow:0 8px 18px -6px rgba(232,163,61,.6); }
+  .btn-buy:active{ transform:translateY(-1px) scale(.95); transition-duration:.06s; }
+  .btn-maxed{ font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--cool); border:1px solid var(--cool); padding:7px 12px; border-radius:6px; opacity:.75; transition:transform .15s ease, opacity .15s ease; }
+  .btn-maxed:hover{ opacity:1; transform:scale(1.05); }
+
+  .garage-foot{ padding:16px 24px; border-top:1px solid var(--border-soft); display:flex; gap:10px; background:#0d1119; }
+  .btn-endless{ flex:1; font-family:var(--font-display); font-size:14px; letter-spacing:.1em; background:var(--accent); color:#1a1206; border:none; padding:13px; cursor:pointer; text-transform:uppercase; transition:transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s ease, background .18s ease; }
+  .btn-endless:hover{ background:#f2b354; transform:translateY(-3px) scale(1.03); box-shadow:0 10px 22px -8px rgba(232,163,61,.6); }
+  .btn-endless:active{ transform:translateY(-1px) scale(.98); transition-duration:.06s; }
+  .btn-back-wide{ font-family:var(--font-display); font-size:14px; letter-spacing:.1em; background:transparent; color:var(--text-dim); border:1px solid var(--border); padding:13px 26px; cursor:pointer; text-transform:uppercase; transition:transform .18s cubic-bezier(.34,1.56,.64,1), color .15s, border-color .15s; }
+  .btn-back-wide:hover{ color:var(--text); border-color:var(--text-dim); transform:translateY(-3px) scale(1.03); }
+  .btn-back-wide:active{ transform:translateY(-1px) scale(.98); transition-duration:.06s; }
+
+  /* =========================================================
+     HUD
+     ========================================================= */
+  .hud{
+    background:
+      linear-gradient(180deg, rgba(10,12,18,.15) 0%, rgba(10,12,18,.75) 100%),
+      linear-gradient(to bottom, #171c2a 0%, #0c0f16 42%, #08090d 100%);
+    position:relative; overflow:hidden;
+  }
+  .road{
+    position:absolute; left:50%; bottom:0; width:900px; height:100%; transform:translateX(-50%);
+    background:
+      linear-gradient(to top, #12151d 0%, #1a1f2c 40%, #10131b 100%);
+    clip-path:polygon(38% 0, 62% 0, 88% 100%, 12% 100%);
+  }
+  .lane-line{
+    position:absolute; left:50%; bottom:0; width:6px; height:100%; transform:translateX(-50%);
+    background:repeating-linear-gradient(to top, var(--accent-dim) 0 26px, transparent 26px 56px);
+    clip-path:polygon(49% 0, 51% 0, 51.6% 100%, 48.4% 100%);
+    opacity:.55;
+  }
+  .glow-post{ position:absolute; top:8%; width:2px; height:120px; background:linear-gradient(to bottom, rgba(232,163,61,.5), transparent); }
+  .glow-post.l{ left:16%; } .glow-post.r{ right:16%; }
+  .glow-post::before{ content:''; position:absolute; top:0; left:50%; width:60px; height:60px; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(232,163,61,.35), transparent 70%); }
+
+  .hud-layer{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between; padding:22px 26px; }
+  .hud-top{ display:flex; justify-content:space-between; align-items:flex-start; }
+  .dist-block .cur{ font-family:var(--font-display); font-size:30px; letter-spacing:.02em; }
+  .dist-block .cur span{ font-size:14px; color:var(--text-dim); font-weight:400; margin-left:4px; }
+  .dist-block .best{ font-size:11px; color:var(--text-faint); margin-top:3px; letter-spacing:.05em; }
+  .dist-block .best b{ color:var(--cool); font-weight:600; }
+
+  .pause-btn{
+    width:38px; height:38px; border-radius:7px; background:rgba(18,22,31,.7); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; gap:3px; backdrop-filter:blur(4px); cursor:pointer;
+    transition:transform .18s cubic-bezier(.34,1.56,.64,1), border-color .15s;
+  }
+  .pause-btn span{ width:3px; height:13px; background:var(--text-dim); border-radius:1px; transition:background .15s; }
+  .pause-btn:hover{ transform:scale(1.14) rotate(-6deg); border-color:var(--accent); }
+  .pause-btn:hover span{ background:var(--accent); }
+  .pause-btn:active{ transform:scale(.92); transition-duration:.06s; }
+
+  .hud-bottom{ display:flex; justify-content:space-between; align-items:flex-end; }
+  .nitro-block{ width:170px; }
+  .nitro-block .lbl{ font-size:10px; letter-spacing:.14em; color:var(--text-faint); text-transform:uppercase; margin-bottom:6px; }
+  .nitro-bar{ display:flex; gap:4px; }
+  .nitro-seg{ height:10px; flex:1; background:rgba(255,255,255,.06); border:1px solid var(--border); border-radius:2px; }
+  .nitro-seg.on{ background:var(--cool); border-color:var(--cool); box-shadow:0 0 10px rgba(95,208,201,.6); }
+
+  .speed-block{ display:flex; flex-direction:column; align-items:center; }
+  .gauge{ width:150px; height:82px; position:relative; }
+  .gauge svg{ width:100%; height:100%; }
+  .gauge .num{
+    position:absolute; bottom:2px; left:50%; transform:translateX(-50%);
+    font-family:var(--font-display); font-size:34px; line-height:1;
+  }
+  .gauge .unit{ position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); font-size:10px; letter-spacing:.14em; color:var(--text-faint); }
+
+  .warn-block{ width:170px; display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+  .warn-chip{ display:flex; align-items:center; gap:7px; font-size:11px; color:var(--text-faint); background:rgba(18,22,31,.7); border:1px solid var(--border); padding:6px 10px; border-radius:6px; }
+  .warn-dot{ width:6px; height:6px; border-radius:50%; background:var(--danger); box-shadow:0 0 8px rgba(226,96,74,.7); }
+
+  footer.note{ margin-top:20px; max-width:1020px; text-align:center; font-size:11.5px; color:var(--text-faint); line-height:1.6; }
+  footer.note b{ color:var(--text-dim); }
+</style>
+</head>
+<body>
+
+  <div class="mockup-head">
+    <h1>Kōsoku — Night Drive</h1>
+    <p>Main menu · Garage · HUD — reference mockup for Godot Control layout</p>
+  </div>
+
+  <div class="tabs">
+    <button class="active" data-target="main-menu">Main Menu</button>
+    <button data-target="garage">Garage</button>
+    <button data-target="hud">HUD</button>
+  </div>
+
+  <div class="frame">
+
+    <!-- ================= MAIN MENU ================= -->
+    <div class="screen main-menu active">
+      <div class="nav-col">
+        <div class="wordmark">
+          <div class="jp">高速 · Highway</div>
+          <h1>KŌSOKU</h1>
+          <div class="sub">An endless night drive</div>
+        </div>
+
+        <nav class="nav-list">
+          <div class="nav-item primary"><span class="idx">01</span><span class="label">Drive</span></div>
+          <div class="nav-item"><span class="idx">02</span><span class="label">Garage</span></div>
+          <div class="nav-item"><span class="idx">03</span><span class="label">Settings</span></div>
+          <div class="nav-item"><span class="idx">04</span><span class="label">Exit</span></div>
+        </nav>
+
+        <div class="nav-foot">
+          <div class="stat-line"><span class="k">Best Distance</span><span class="v">16,082 m</span></div>
+          <div class="credit-pill">
+            <span class="tag">Credits</span>
+            <span class="amt">$6,390</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="viewport-empty"></div>
+    </div>
+
+    <!-- ================= GARAGE ================= -->
+    <div class="screen garage">
+      <div class="viewport-empty"></div>
+
+      <div class="garage-panel">
+        <div class="garage-top">
+          <div class="back-btn"><span class="chev"></span> Back</div>
+          <div class="trans-toggle"><button class="on">A/T</button><button>M/T</button></div>
+        </div>
+        <div class="garage-sub">
+          <div class="garage-title">Garage<span class="veh">Sedan 01 — Standard</span></div>
+          <div class="garage-credit"><span class="amt">$6,390</span></div>
+        </div>
+
+        <div class="garage-body">
+          <div class="cat-rail">
+            <div class="cat-item on">Performance</div>
+            <div class="cat-item">Protection</div>
+            <div class="cat-item">Utility</div>
+          </div>
+
+          <div class="upgrade-list">
+          <div class="cat-label">Performance</div>
+
+          <div class="upg-row">
+            <div class="upg-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
+            <div class="upg-main"><div class="name">Acceleration</div><div class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span></div></div>
+            <div class="upg-actions"><button class="btn-sell">Sell</button><button class="btn-buy">Buy $420</button></div>
+          </div>
+
+          <div class="upg-row">
+            <div class="upg-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+            <div class="upg-main"><div class="name">Braking</div><div class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div></div>
+            <div class="upg-actions"><button class="btn-sell">Sell</button><button class="btn-buy">Buy $260</button></div>
+          </div>
+
+          <div class="upg-row">
+            <div class="upg-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
+            <div class="upg-main"><div class="name">Handling</div><div class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div></div>
+            <div class="upg-actions"><button class="btn-sell">Sell</button><button class="btn-buy">Buy $310</button></div>
+          </div>
+
+          <div class="upg-row">
+            <div class="upg-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 18l6-13 6 13M6 14h8"/><path d="M16 18l4-9"/></svg></div>
+            <div class="upg-main"><div class="name">Top Speed</div><div class="pips"><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div></div>
+            <div class="upg-actions"><button class="btn-sell">Sell</button><button class="btn-buy">Buy $580</button></div>
+          </div>
+
+          <div class="cat-label">Protection</div>
+
+          <div class="upg-row">
+            <div class="upg-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg></div>
+            <div class="upg-main"><div class="name">Armor</div><div class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span></div></div>
+            <div class="upg-actions"><button class="btn-sell">Sell</button><button class="btn-buy">Buy $440</button></div>
+          </div>
+
+          <div class="upg-row">
+            <div class="upg-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+            <div class="upg-main"><div class="name">Ram Power</div><div class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span></div></div>
+            <div class="upg-actions"><button class="btn-sell">Sell</button><button class="btn-buy">Buy $150</button></div>
+          </div>
+
+          <div class="cat-label">Utility</div>
+
+          <div class="upg-row">
+            <div class="upg-icon"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 9a10 10 0 0116 0M7 12a6 6 0 0110 0M12 20a2 2 0 100-4 2 2 0 000 4z"/></svg></div>
+            <div class="upg-main"><div class="name">Nitro Boost</div><div class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span></div></div>
+            <div class="upg-actions"><button class="btn-sell">Sell</button><button class="btn-maxed">Maxed</button></div>
+          </div>
+          </div>
+        </div>
+
+        <div class="garage-foot">
+          <button class="btn-back-wide">Back</button>
+          <button class="btn-endless">Play Endless</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= HUD ================= -->
+    <div class="screen hud">
+      <div class="road"></div>
+      <div class="lane-line"></div>
+      <div class="glow-post l"></div>
+      <div class="glow-post r"></div>
+
+      <div class="hud-layer">
+        <div class="hud-top">
+          <div class="dist-block">
+            <div class="cur">1,204<span>m</span></div>
+            <div class="best">Best <b>16,082 m</b></div>
+          </div>
+          <div class="pause-btn"><span></span><span></span></div>
+        </div>
+
+        <div class="hud-bottom">
+          <div class="nitro-block">
+            <div class="lbl">Nitro</div>
+            <div class="nitro-bar">
+              <div class="nitro-seg on"></div><div class="nitro-seg on"></div><div class="nitro-seg on"></div>
+              <div class="nitro-seg"></div><div class="nitro-seg"></div>
+            </div>
+          </div>
+
+          <div class="speed-block">
+            <div class="gauge">
+              <svg viewBox="0 0 150 82">
+                <path d="M8 78 A67 67 0 0 1 142 78" fill="none" stroke="#1c2230" stroke-width="8" stroke-linecap="round"/>
+                <path d="M8 78 A67 67 0 0 1 108 20" fill="none" stroke="#e8a33d" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+              <div class="num">86</div>
+              <div class="unit">KM/H</div>
+            </div>
+          </div>
+
+          <div class="warn-block">
+            <div class="warn-chip"><span class="warn-dot"></span> Traffic ahead</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="note">
+    <b>Godot mapping:</b> each <code>.screen</code> → a full-rect <code>Control</code> split 50/50: a <code>Control</code> with size flags left empty (no children — that's where your viewport/camera renders) and a sibling <code>Control</code> holding the real UI (right side on Main Menu, left side on Garage). <code>.nav-col</code> / <code>.cat-rail</code> → <code>VBoxContainer</code>; <code>.upg-row</code> → <code>HBoxContainer</code> inside a <code>PanelContainer</code>; <code>.pip</code> rows → a small <code>HBoxContainer</code> of <code>ColorRect</code>, or one <code>TextureProgressBar</code> in stepped mode; the speed <code>.gauge</code> → <code>TextureProgressBar</code> (radial fill mode); nitro segments → <code>HBoxContainer</code> of <code>ColorRect</code> driven by a script. Colors/fonts below are ready to drop into a Godot <code>Theme</code> resource. Button motion (lift + scale on hover, quick squash on press) → a <code>Tween</code> on <code>mouse_entered</code>/<code>mouse_exited</code>/<code>button_down</code> animating <code>scale</code> and <code>position</code>, or the same curve baked into an <code>AnimationPlayer</code> reused across buttons.
+  </footer>
+
+<script>
+  document.querySelectorAll('.tabs button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelector('.'+btn.dataset.target).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

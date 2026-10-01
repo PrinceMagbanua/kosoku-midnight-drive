@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://UI/menu_showcase.gd" id="1"]
+[ext_resource type="PackedScene" path="res://UI/garage/GaragePreview.tscn" id="2"]
+[ext_resource type="Shader" path="res://UI/film_grain.gdshader" id="3"]
+
+[sub_resource type="ShaderMaterial" id="grain"]
+shader = ExtResource("3")
+
+[node name="MenuShowcase" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1")
+
+[node name="Root" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="PreviewContainer" type="SubViewportContainer" parent="Root"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch = true
+
+[node name="PreviewViewport" type="SubViewport" parent="Root/PreviewContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1024, 600)
+
+[node name="GaragePreview" parent="Root/PreviewContainer/PreviewViewport" instance=ExtResource("2")]
+
+[node name="GrainRect" type="ColorRect" parent="Root"]
+material = SubResource("grain")
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2

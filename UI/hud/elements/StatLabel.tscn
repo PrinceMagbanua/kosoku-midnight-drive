@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" uid="uid://cumcxb1fywqol" path="res://FONT/KosokuDisplay/KosokuDisplay-Regular.ttf" id="1_reg"]
+
+[node name="StatLabel" type="Label"]
+offset_right = 200.0
+offset_bottom = 22.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.725, 0.827, 0.847, 1)
+theme_override_fonts/font = ExtResource("1_reg")
+theme_override_font_sizes/font_size = 15
+text = "$0"

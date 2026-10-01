@@ -1,0 +1,234 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://UI/start_screen.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dtrmoujawfnog" path="res://theme/main_theme.tres" id="2"]
+[ext_resource type="Script" path="res://UI/common/panel_shape.gd" id="3"]
+[ext_resource type="Script" path="res://UI/common/button_motion.gd" id="4"]
+
+[node name="StartScreen" type="CanvasLayer"]
+layer = 4
+script = ExtResource("1")
+
+[node name="Root" type="Control" parent="."]
+theme = ExtResource("2")
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+
+[node name="Panel" type="MarginContainer" parent="Root"]
+unique_name_in_owner = true
+script = ExtResource("3")
+anchor_right = 0.5
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+corner_size = 0.0
+top_color = Color(0, 0, 0, 0)
+bottom_color = Color(0, 0, 0, 0)
+
+[node name="VBox" type="VBoxContainer" parent="Root/Panel"]
+layout_mode = 2
+
+[node name="Wordmark" type="VBoxContainer" parent="Root/Panel/VBox"]
+layout_mode = 2
+
+[node name="Jp" type="Label" parent="Root/Panel/VBox/Wordmark"]
+layout_mode = 2
+theme_type_variation = &"WordmarkJp"
+text = "高速 · HIGHWAY"
+
+[node name="Title" type="Label" parent="Root/Panel/VBox/Wordmark"]
+layout_mode = 2
+theme_type_variation = &"WordmarkTitle"
+text = "KŌSOKU"
+
+[node name="Sub" type="Label" parent="Root/Panel/VBox/Wordmark"]
+layout_mode = 2
+theme_type_variation = &"WordmarkSub"
+text = "An endless night drive"
+
+[node name="NavSpacer" type="Control" parent="Root/Panel/VBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+
+[node name="NavList" type="VBoxContainer" parent="Root/Panel/VBox"]
+layout_mode = 2
+
+[node name="PlayEndlessButton" type="Button" parent="Root/Panel/VBox/NavList"]
+unique_name_in_owner = true
+script = ExtResource("4")
+layout_mode = 2
+theme_type_variation = &"NavItemPrimaryButton"
+text = "01   DRIVE"
+alignment = 0
+hover_offset = Vector2(10, 0)
+hover_scale = 1.0
+
+[node name="GarageButton" type="Button" parent="Root/Panel/VBox/NavList"]
+unique_name_in_owner = true
+script = ExtResource("4")
+layout_mode = 2
+theme_type_variation = &"NavItemButton"
+text = "02   GARAGE"
+alignment = 0
+hover_offset = Vector2(10, 0)
+hover_scale = 1.0
+
+[node name="SettingsButton" type="Button" parent="Root/Panel/VBox/NavList"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"NavItemDisabledButton"
+disabled = true
+text = "03   SETTINGS"
+alignment = 0
+tooltip_text = "Coming soon"
+
+[node name="ExitButton" type="Button" parent="Root/Panel/VBox/NavList"]
+unique_name_in_owner = true
+script = ExtResource("4")
+layout_mode = 2
+theme_type_variation = &"NavItemButton"
+text = "04   EXIT"
+alignment = 0
+hover_offset = Vector2(10, 0)
+hover_scale = 1.0
+
+[node name="FooterSpacer" type="Control" parent="Root/Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NavFoot" type="VBoxContainer" parent="Root/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="StatLine" type="HBoxContainer" parent="Root/Panel/VBox/NavFoot"]
+layout_mode = 2
+
+[node name="StatKey" type="Label" parent="Root/Panel/VBox/NavFoot/StatLine"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"NavStatKey"
+text = "BEST DISTANCE"
+
+[node name="BestDistanceLabel" type="Label" parent="Root/Panel/VBox/NavFoot/StatLine"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"NavStatValue"
+text = "BEST: -"
+
+[node name="CreditPill" type="MarginContainer" parent="Root/Panel/VBox/NavFoot"]
+script = ExtResource("3")
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+corner_size = 9.0
+top_color = Color(0, 0, 0, 0)
+bottom_color = Color(0, 0, 0, 0)
+border_color = Color(0.1451, 0.1725, 0.2392, 1)
+border_width = 1.0
+border_left = true
+border_top = true
+border_right = true
+border_bottom = true
+
+[node name="HBox" type="HBoxContainer" parent="Root/Panel/VBox/NavFoot/CreditPill"]
+layout_mode = 2
+
+[node name="Tag" type="Label" parent="Root/Panel/VBox/NavFoot/CreditPill/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"CreditTag"
+text = "CASH"
+
+[node name="CashLabel" type="Label" parent="Root/Panel/VBox/NavFoot/CreditPill/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CreditAmount"
+text = "$0"
+
+[node name="CreditsButton" type="Button" parent="Root"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -60.0
+offset_right = -40.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"BackButton"
+text = "CREDITS"
+alignment = 2
+
+[node name="CreditsOverlay" type="Control" parent="Root"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="Panel" parent="Root/CreditsOverlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"MenuBackdrop"
+
+[node name="CreditsPanel" type="PanelContainer" parent="Root/CreditsOverlay"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -260.0
+offset_right = 280.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"MenuPanel"
+
+[node name="Margin" type="MarginContainer" parent="Root/CreditsOverlay/CreditsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Root/CreditsOverlay/CreditsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/CreditsOverlay/CreditsPanel/Margin/VBox"]
+layout_mode = 2
+theme_type_variation = &"SectionCatLabel"
+text = "CREDITS"
+
+[node name="Scroll" type="ScrollContainer" parent="Root/CreditsOverlay/CreditsPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="CreditsText" type="RichTextLabel" parent="Root/CreditsOverlay/CreditsPanel/Margin/VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+
+[node name="CreditsCloseButton" type="Button" parent="Root/CreditsOverlay/CreditsPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_type_variation = &"BackButton"
+text = "CLOSE"

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HUD Layout — 1024×600</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page-bg:#0a0c10;
+    --frame-bg:#060810;
+    --wire:#6fd8ea;
+    --wire-dim:rgba(111,216,234,.4);
+    --wire-fill:rgba(111,216,234,.06);
+    --wire-fill-strong:rgba(111,216,234,.12);
+    --new:#ffb454;
+    --new-fill:rgba(255,180,84,.08);
+    --danger:#ff6b57;
+    --good:#57d68d;
+    --warn:#f5c451;
+    --text:#d6ecf0;
+    --text-dim:#5f7a82;
+    --mono:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;
+    --display:'Oswald',sans-serif;
+    --body:'Inter',sans-serif;
+    --hud-bright:#eaf7fa;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--page-bg); color:var(--text); font-family:var(--mono);
+    display:flex; flex-direction:column; align-items:center; padding:26px 16px 60px; min-height:100vh;
+  }
+  .head{ text-align:center; max-width:760px; margin-bottom:16px; }
+  .head h1{ font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-dim); font-weight:600; }
+  .head p{ font-size:11.5px; color:var(--text-dim); margin-top:5px; line-height:1.6; }
+  .head b{ color:var(--wire); }
+
+  .tabs{ display:flex; gap:4px; margin-bottom:16px; background:#0c0f16; border:1px solid #1a2028; padding:4px; border-radius:7px; flex-wrap:wrap; justify-content:center; }
+  .tabs button{ font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--text-dim); background:transparent; border:none; padding:7px 13px; border-radius:5px; cursor:pointer; text-transform:uppercase; }
+  .tabs button.active{ background:#141a24; color:var(--wire); }
+  .tabs button:hover:not(.active){ color:var(--text); }
+
+  .frame-wrap{ overflow-x:auto; max-width:100%; padding-bottom:6px; }
+  .frame{
+    width:1024px; height:600px; position:relative; flex-shrink:0;
+    background:
+      repeating-linear-gradient(135deg, #0b0e15 0 2px, #090b11 2px 42px);
+    border:1px solid #1c232d; overflow:hidden; display:none;
+  }
+  .frame.active{ display:block; }
+  .transparent-mark{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-size:13px; letter-spacing:.2em; color:#232c37; text-transform:uppercase; text-align:center; pointer-events:none;
+  }
+
+  /* ---- wireframe block primitives ---- */
+  .w{
+    position:absolute; border:1px solid var(--wire-dim); background:var(--wire-fill);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+  }
+  .w.solid{ border-style:solid; }
+  .w.dashed{ border-style:dashed; border-color:var(--new); background:var(--new-fill); }
+  .w .tag{
+    position:absolute; font-size:8.5px; letter-spacing:.06em; color:var(--wire); background:#060810;
+    padding:1px 5px; white-space:nowrap; text-transform:uppercase; border:1px solid var(--wire-dim); border-radius:2px;
+  }
+  .w.dashed .tag{ color:var(--new); border-color:var(--new); }
+  .w .tag.below{ top:100%; margin-top:4px; left:0; }
+  .w .tag.above{ bottom:100%; margin-bottom:4px; left:0; }
+
+  .row{ display:flex; align-items:center; justify-content:center; gap:16px; font-size:11px; color:var(--text-dim); }
+  .row .item{ display:flex; align-items:baseline; gap:5px; }
+  .row .item .v{ color:var(--text); font-size:13px; }
+  .row .combo{ color:var(--good); }
+
+  .stack{ display:flex; flex-direction:column; gap:6px; width:100%; padding:8px 10px; }
+  .stack .line{ display:flex; justify-content:space-between; font-size:10.5px; }
+  .bar-outline{ height:6px; border:1px solid var(--wire-dim); position:relative; }
+  .bar-outline i{ position:absolute; left:0; top:0; bottom:0; background:var(--wire-fill-strong); }
+
+  /* ===== Live HUD — real design pass ===== */
+  .stat-stack{ position:absolute; left:28px; top:24px; display:flex; flex-direction:column; }
+  .stat-lbl{ font-family:var(--body); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--text-dim); }
+  .stat-num{ font-family:var(--display); font-weight:600; font-size:64px; line-height:1; color:var(--hud-bright); letter-spacing:.01em; margin-top:2px; text-shadow:0 0 22px rgba(111,216,234,.25); }
+  .stat-combo{ font-family:var(--display); font-weight:600; font-size:38px; line-height:1; margin-top:18px; }
+  .stat-cash{ font-family:var(--body); font-weight:500; font-size:15px; color:#b9d3d8; margin-top:16px; letter-spacing:.02em; }
+  .stat-dist{ font-family:var(--body); font-weight:500; font-size:12.5px; color:var(--text-dim); margin-top:9px; letter-spacing:.03em; }
+
+  .mini-meter-sm{ position:absolute; }
+  .mini-meter-sm .l{ font-family:var(--body); font-size:8.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-dim); }
+  .mini-meter-sm .line{ height:2px; margin-top:5px; background:rgba(255,255,255,.08); position:relative; }
+  .mini-meter-sm .line i{ position:absolute; left:0; top:0; bottom:0; }
+
+  .ped-line-row{ display:flex; align-items:center; gap:9px; height:9px; }
+  .ped-line-row .l{ width:28px; text-align:right; font-family:var(--body); font-size:8.5px; letter-spacing:.1em; color:var(--text-dim); flex-shrink:0; }
+  .ped-line-row .bar{ flex:1; height:2px; background:rgba(255,255,255,.08); position:relative; }
+  .ped-line-row .bar i{ position:absolute; left:0; top:0; bottom:0; }
+
+
+  .mm-ring{
+    position:absolute; border-radius:50%; border:1px solid rgba(111,216,234,.3);
+    background:radial-gradient(circle at 50% 42%, rgba(111,216,234,.08), transparent 70%);
+  }
+  .mm-ring::after{ content:''; position:absolute; left:50%; top:38%; width:6px; height:6px; background:var(--wire); border-radius:50%; transform:translate(-50%,-50%); box-shadow:0 0 8px var(--wire); }
+  .settings-btn{
+    position:absolute; width:34px; height:34px; border-radius:50%; border:1px solid rgba(111,216,234,.35);
+    display:flex; align-items:center; justify-content:center; color:var(--text-dim);
+  }
+  .settings-btn svg{ width:15px; height:15px; }
+
+  .dial-free{ position:absolute; }
+  .dial-free .dial-svg{ width:100%; height:100%; position:absolute; inset:0; }
+  .dial-face-num{ position:absolute; font-family:var(--display); color:var(--hud-bright); text-align:center; width:100%; }
+
+  .ped-rows{ position:absolute; display:flex; flex-direction:column; gap:4px; }
+  .ped-row{ display:flex; align-items:center; gap:8px; }
+  .ped-row .lbl{ width:26px; font-family:var(--body); font-size:9px; letter-spacing:.08em; color:var(--text-dim); text-align:right; }
+  .ped-row .cells{ display:flex; gap:3px; flex:1; }
+  .ped-row .cells span{ height:9px; flex:1; background:rgba(255,255,255,.05); border-radius:1px; }
+  .ped-row .cells span.on{ background:var(--c); box-shadow:0 0 5px var(--c); }
+
+  .mini-meter{ position:absolute; width:190px; }
+  .mini-meter .top{ display:flex; justify-content:space-between; align-items:baseline; font-family:var(--body); }
+  .mini-meter .top .l{ font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--text-dim); }
+  .mini-meter .top .v{ font-family:var(--display); font-size:15px; color:var(--hud-bright); }
+  .mini-meter .line{ height:2px; margin-top:6px; background:rgba(255,255,255,.08); position:relative; }
+  .mini-meter .line i{ position:absolute; left:0; top:0; bottom:0; }
+
+
+  .cell-cluster{ display:flex; align-items:flex-end; gap:7px; height:100%; padding:6px; justify-content:center; }
+  .cell-col{ position:relative; display:flex; flex-direction:column-reverse; gap:2px; width:11px; height:88px; }
+  .cell-col .seg{ flex:1; background:rgba(255,255,255,.05); border:1px solid var(--wire-dim); border-radius:1px; }
+  .cell-col .seg.on{ background:var(--c,var(--wire)); border-color:transparent; box-shadow:0 0 5px var(--c,var(--wire)); }
+  .cell-lbl{ position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); font-size:6.5px; letter-spacing:.04em; color:var(--text-dim); white-space:nowrap; }
+
+  .dial-svg{ width:100%; height:100%; position:absolute; inset:0; }
+  .dial-num{ position:absolute; font-family:var(--mono); color:var(--text); text-align:center; width:100%; }
+  .dial-ring{
+    position:absolute; inset:0; border-radius:50%;
+    background:conic-gradient(from -130deg, #3aa0ff 0deg 132deg, transparent 132deg 150deg, #ff5a4d 150deg 198deg, transparent 198deg 360deg);
+    -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 13px), #000 calc(100% - 12px));
+    mask:radial-gradient(farthest-side, transparent calc(100% - 13px), #000 calc(100% - 12px));
+    filter:drop-shadow(0 0 6px rgba(111,216,234,.35));
+  }
+  .gear-badge{
+    position:absolute; right:-4px; bottom:2px; width:40px; height:40px; background:#0b0f16;
+    border:2px solid var(--wire); display:flex; align-items:center; justify-content:center;
+    font-size:19px; color:var(--wire); box-shadow:0 0 10px rgba(111,216,234,.45);
+    clip-path:polygon(0 0, 100% 0, 100% 65%, 65% 100%, 0 100%);
+  }
+
+  .hp-nitro-panel{
+    clip-path:polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));
+    background:linear-gradient(160deg, rgba(12,17,24,.92), rgba(6,9,13,.86));
+    border:1px solid var(--wire-dim); padding:12px 16px; display:flex; flex-direction:column; gap:11px;
+    width:100%; height:100%;
+  }
+  .hn-row{ display:flex; flex-direction:column; gap:5px; }
+  .hn-row .top{ display:flex; justify-content:space-between; align-items:baseline; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); }
+  .hn-row .top b{ color:var(--text); font-family:var(--mono); font-size:12px; letter-spacing:0; }
+  .hn-cells{ display:flex; gap:2.5px; }
+  .hn-cells span{ flex:1; height:8px; background:rgba(255,255,255,.06); border:1px solid var(--wire-dim); }
+  .hn-cells span.on{ border-color:transparent; background:var(--c); box-shadow:0 0 5px var(--c); }
+
+
+  .toast-pill{
+    display:flex; align-items:center; justify-content:center; gap:8px; height:100%; font-size:11px; color:var(--new);
+  }
+
+  .btn-outline{ font-size:10.5px; color:var(--text-dim); letter-spacing:.05em; }
+
+  .legend{ margin-top:16px; display:flex; gap:22px; flex-wrap:wrap; justify-content:center; font-size:10.5px; color:var(--text-dim); max-width:1024px; }
+  .legend .k{ display:flex; align-items:center; gap:7px; }
+  .legend .sw{ width:16px; height:10px; border:1px solid var(--wire-dim); background:var(--wire-fill); }
+  .legend .sw.solid{ border-style:solid; }
+  .legend .sw.dashed{ border-style:dashed; border-color:var(--new); background:var(--new-fill); }
+  .legend .sw.red{ border-color:var(--danger); background:rgba(255,107,87,.1); }
+
+  footer.note{ margin-top:18px; max-width:1024px; font-size:11px; color:var(--text-dim); line-height:1.7; text-align:center; }
+  footer.note b{ color:var(--wire); }
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <h1>HUD — Live Design Pass (1024×600)</h1>
+    <p>Live HUD tab is now an actual minimal design, not a wireframe. The other tabs (Countdown / Crash / Pause / Toast) are still layout-only — <b>solid cyan</b> = existing, kept; <b>dashed amber</b> = new.</p>
+  </div>
+
+  <div class="tabs">
+    <button class="active" data-t="live">Live HUD</button>
+    <button data-t="countdown">Countdown</button>
+    <button data-t="crash">Crash</button>
+    <button data-t="pause">Pause</button>
+    <button data-t="toast">Toast (concept)</button>
+  </div>
+
+  <div class="frame-wrap">
+
+    <!-- ============ LIVE HUD ============ -->
+    <div class="frame active" id="live">
+      <div class="transparent-mark" style="opacity:.6;">transparent — 3d scene renders here</div>
+
+      <!-- score / combo / cash / distance, upper-left, stacked -->
+      <div class="stat-stack">
+        <span class="stat-lbl">Score</span>
+        <span class="stat-num">79,453</span>
+        <span class="stat-combo" style="color:var(--good);">1×</span>
+        <span class="stat-cash">$14,032</span>
+        <span class="stat-dist">0.00 km</span>
+      </div>
+
+      <!-- help + settings, upper-right -->
+      <div class="settings-btn" style="left:926px; top:20px; font-family:var(--display); font-size:15px;">?</div>
+      <div class="settings-btn" style="left:970px; top:20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+        </svg>
+      </div>
+      <div class="mm-ring" style="left:884px; top:64px; width:120px; height:120px;"></div>
+
+      <!-- toast zone -->
+      <div class="w dashed" style="left:342px; top:240px; width:340px; height:46px;">
+        <div class="toast-pill">◂ OVERTAKE +50</div>
+      </div>
+
+      <!-- HP, lower-left. Nitro dropped here — the sub-dial already covers it -->
+      <div class="mini-meter" style="left:28px; bottom:16px;">
+        <div class="top"><span class="l">HP</span><span class="v">339/390</span></div>
+        <div class="line"><i style="width:87%; background:var(--good); box-shadow:0 0 6px var(--good);"></i></div>
+      </div>
+
+      <!-- boost sub-dial, bottom-aligned with the main dial, sitting right above the pedal rows -->
+      <div class="dial-free" style="left:697px; top:457px; width:90px; height:90px;">
+        <div class="dial-ring" style="background:conic-gradient(from -130deg, #3aa0ff 0deg 240deg, transparent 240deg 360deg); filter:drop-shadow(0 0 5px rgba(58,160,255,.4));"></div>
+        <svg class="dial-svg" viewBox="0 0 90 90">
+          <line x1="45" y1="45" x2="82" y2="30" stroke="var(--new)" stroke-width="2"/>
+          <circle cx="45" cy="45" r="2.5" fill="var(--new)"/>
+        </svg>
+        <div class="dial-face-num" style="top:60px; font-size:8px; color:var(--text-dim); letter-spacing:.08em;">N₂O</div>
+      </div>
+
+      <!-- main RPM/speed dial -->
+      <div class="dial-free" style="left:796px; top:366px; width:200px; height:200px;">
+        <div class="dial-ring"></div>
+        <svg class="dial-svg" viewBox="0 0 200 200">
+          <g stroke="#6fd8ea55" stroke-width="1.5">
+            <line x1="100" y1="16" x2="100" y2="27"/>
+            <line x1="16" y1="100" x2="27" y2="100"/>
+          </g>
+          <line x1="100" y1="100" x2="157" y2="44" stroke="var(--wire)" stroke-width="2.5"/>
+          <circle cx="100" cy="100" r="4" fill="var(--wire)"/>
+        </svg>
+        <div class="gear-badge" style="width:34px; height:34px; font-size:16px;">N</div>
+
+        <!-- small RPM readout -->
+        <div class="dial-face-num" style="top:144px; font-size:10.5px; color:var(--text-dim); letter-spacing:.08em; font-family:var(--body);">RPM 3.2K</div>
+
+        <!-- ABS/TCS/ESP, left of the speed number, same band -->
+        <div style="position:absolute; left:48px; top:112px; width:60px; font-family:var(--body); font-size:8.5px; letter-spacing:.08em; color:var(--warn); line-height:1.8; opacity:.9;">
+          ABS<br>TCS<br>ESP
+        </div>
+
+        <!-- speed number, now up top, bigger -->
+        <div style="position:absolute; left:47px; top:42px; text-align:left;">
+          <div style="font-family:var(--display); font-size:50px; color:var(--hud-bright); line-height:1; text-shadow:0 0 16px rgba(111,216,234,.25);">86</div>
+          <div style="font-family:var(--body); font-size:9px; color:var(--text-dim); letter-spacing:.1em; margin-top:5px;">MPH</div>
+        </div>
+      </div>
+
+      <!-- pedals — compact rows, label left, bar right, tight padding -->
+      <div style="position:absolute; left:682px; top:548px; width:304px; display:flex; flex-direction:column; gap:2px;">
+        <div class="ped-line-row"><span class="l">THR</span><div class="bar"><i style="width:60%; background:#5d96ff; box-shadow:0 0 6px #5d96ff;"></i></div></div>
+        <div class="ped-line-row"><span class="l">BRK</span><div class="bar"><i style="width:15%; background:var(--danger); box-shadow:0 0 6px var(--danger);"></i></div></div>
+        <div class="ped-line-row"><span class="l">HBK</span><div class="bar"><i style="width:0%; background:#bd7dff; box-shadow:0 0 6px #bd7dff;"></i></div></div>
+        <div class="ped-line-row"><span class="l">CLU</span><div class="bar"><i style="width:0%; background:var(--hud-bright); box-shadow:0 0 6px var(--hud-bright);"></i></div></div>
+      </div>
+    </div>
+
+    <!-- ============ COUNTDOWN ============ -->
+    <div class="frame" id="countdown">
+      <div class="transparent-mark">transparent — 3d scene (camera pan-in) renders here</div>
+      <div class="w solid" style="left:412px; top:230px; width:200px; height:140px;">
+        <div style="font-size:46px; color:var(--wire);">3</div>
+        <span class="tag below">Swaps 3→2→1→GO instantly today. Each number needs its own scale/fade-in, tied to the 2.5s camera pan-in</span>
+      </div>
+    </div>
+
+    <!-- ============ CRASH ============ -->
+    <div class="frame" id="crash">
+      <div class="transparent-mark">transparent — 3d scene (frozen crash frame) renders here</div>
+      <div class="w solid" style="left:0; top:0; width:1024px; height:600px; background:rgba(0,0,0,.55); border:none;"></div>
+      <div class="w solid" style="left:342px; top:180px; width:340px; height:230px; flex-direction:column; gap:10px; background:#0a0c10cc;">
+        <div style="font-size:18px; color:var(--danger); letter-spacing:.1em;">CRASHED</div>
+        <div style="font-size:11px; color:var(--text-dim);">SCORE 79453 · BEST 102340</div>
+        <div style="font-size:11px; color:var(--text-dim);">$14032 TOTAL</div>
+        <div style="font-size:9.5px; color:var(--text-dim); opacity:.7;">tap to continue</div>
+        <div class="w solid" style="position:relative; left:auto; top:auto; width:140px; height:34px; margin-top:6px;"><span class="btn-outline">GARAGE</span></div>
+        <span class="tag below">Overlay appears instantly (60% dim) today — needs fade-in; panel needs entrance motion</span>
+      </div>
+    </div>
+
+    <!-- ============ PAUSE ============ -->
+    <div class="frame" id="pause">
+      <div class="transparent-mark">transparent — 3d scene (frozen) renders here</div>
+      <div class="w solid" style="left:0; top:0; width:1024px; height:600px; background:rgba(0,0,0,.5); border:none;"></div>
+      <div class="w solid" style="left:372px; top:170px; width:280px; height:230px; flex-direction:column; gap:12px; background:#0a0c10cc;">
+        <div style="font-size:16px; color:var(--wire); letter-spacing:.14em;">PAUSED</div>
+        <div class="w solid" style="position:relative; left:auto; top:auto; width:150px; height:32px;"><span class="btn-outline">RESUME</span></div>
+        <div class="w solid" style="position:relative; left:auto; top:auto; width:150px; height:32px;"><span class="btn-outline">GARAGE</span></div>
+        <div class="w solid" style="position:relative; left:auto; top:auto; width:150px; height:32px;"><span class="btn-outline">END RUN</span></div>
+        <span class="tag below">Same shared button motion as Start/Garage screens</span>
+      </div>
+      <div class="w dashed" style="left:372px; top:170px; width:280px; height:110px; opacity:.55;">
+        <span style="font-size:9px; color:var(--new); text-align:center;">END RUN? confirm panel</span>
+        <span class="tag below">Swaps in when GARAGE pressed — instant today, needs transition (this ghost box shows it overlapping the pause panel's position)</span>
+      </div>
+    </div>
+
+    <!-- ============ TOAST CONCEPT ============ -->
+    <div class="frame" id="toast">
+      <div class="transparent-mark">transparent — 3d scene renders here</div>
+      <div class="w dashed" style="left:342px; top:180px; width:340px; height:50px; opacity:1;">
+        <div class="toast-pill">◂ OVERTAKE +50</div>
+        <span class="tag below">t=0.0s — slides + fades in from the left</span>
+      </div>
+      <div class="w dashed" style="left:342px; top:238px; width:340px; height:50px; opacity:.65;">
+        <div class="toast-pill" style="color:var(--new);">◂ COMBO x5!</div>
+        <span class="tag below">t=0.6s — second toast stacks below, slightly dimmer</span>
+      </div>
+      <div class="w dashed" style="left:342px; top:296px; width:340px; height:50px; opacity:.4;">
+        <div class="toast-pill" style="color:var(--new);">◂ NEAR MISS +10</div>
+        <span class="tag below">t=1.2s — third stacks further down, fading toward exit</span>
+      </div>
+      <span class="tag" style="left:342px; top:360px; position:absolute; border-color:var(--new); color:var(--new);">exits after ~2s — fade + slight upward drift, or slide back out left</span>
+    </div>
+
+  </div>
+
+  <div class="legend">
+    <div class="k"><span class="sw solid"></span> existing element, kept — needs restyle/animation</div>
+    <div class="k"><span class="sw dashed"></span> new element, not built yet</div>
+    <div class="k"><span class="sw red"></span> alert / redline / danger state</div>
+  </div>
+
+  <footer class="note">
+    <b>This pass:</b> synced the file to your manually-tuned positions — HP anchored to the bottom edge, both dials nudged over, speed number moved up top (and bigger, 50px) with RPM now sitting lower where speed used to be, and ABS/TCS/ESP shifted right to sit under it.
+  </footer>
+
+<script>
+  document.querySelectorAll('.tabs button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.frame').forEach(f=>f.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.t).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

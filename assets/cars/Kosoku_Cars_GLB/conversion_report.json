@@ -1,0 +1,1192 @@
+{
+  "Sedan_01/Base": {
+    "ok": true,
+    "size_m_xyz": [
+      2.296,
+      5.379,
+      1.635
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01",
+      "SM_Veh_Sedan_01_Boot",
+      "SM_Veh_Sedan_01_Door_LF",
+      "SM_Veh_Sedan_01_Door_LF_Glass",
+      "SM_Veh_Sedan_01_Door_LR",
+      "SM_Veh_Sedan_01_Door_LR_Glass_1",
+      "SM_Veh_Sedan_01_Door_LR_Glass_2",
+      "SM_Veh_Sedan_01_Door_RF",
+      "SM_Veh_Sedan_01_Door_RF_Glass",
+      "SM_Veh_Sedan_01_Door_RR",
+      "SM_Veh_Sedan_01_Door_RR_Glass_1",
+      "SM_Veh_Sedan_01_Door_RR_Glass_2",
+      "SM_Veh_Sedan_01_Engine_01",
+      "SM_Veh_Sedan_01_Gear_Stick_01",
+      "SM_Veh_Sedan_01_Gear_Stick_01_Stick",
+      "SM_Veh_Sedan_01_Glass",
+      "SM_Veh_Sedan_01_Seats_Front_01",
+      "SM_Veh_Sedan_01_Seats_Rear_01",
+      "SM_Veh_Sedan_01_SteeringW",
+      "SM_Veh_Sedan_01_Undercarriage_01",
+      "SM_Veh_Sedan_01_Wheel_fl",
+      "SM_Veh_Sedan_01_Wheel_fr",
+      "SM_Veh_Sedan_01_Wheel_rl",
+      "SM_Veh_Sedan_01_Wheel_rr"
+    ]
+  },
+  "Sedan_01/Sedan_01_Bonnet_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.739,
+      1.546,
+      0.334
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Bonnet_01"
+    ]
+  },
+  "Sedan_01/Sedan_01_Bonnet_03": {
+    "ok": true,
+    "size_m_xyz": [
+      1.739,
+      1.546,
+      0.366
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Bonnet_03"
+    ]
+  },
+  "Sedan_01/Sedan_01_Fenders_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.366,
+      4.433,
+      1.551
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Fenders_02",
+      "SM_Veh_Sedan_01_Fenders_02_Door_L",
+      "SM_Veh_Sedan_01_Fenders_02_Door_R"
+    ]
+  },
+  "Sedan_01/Sedan_01_Fenders_03": {
+    "ok": true,
+    "size_m_xyz": [
+      2.288,
+      4.311,
+      0.702
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Fenders_03"
+    ]
+  },
+  "Sedan_01/Sedan_01_Front_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      2.021,
+      0.681,
+      0.53
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Front_Bumper_01"
+    ]
+  },
+  "Sedan_01/Sedan_01_Front_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.216,
+      0.678,
+      0.591
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Front_Bumper_02"
+    ]
+  },
+  "Sedan_01/Sedan_01_Light_Covers_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.833,
+      5.234,
+      0.463
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Light_Covers_01"
+    ]
+  },
+  "Sedan_01/Sedan_01_Rear_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      2.134,
+      0.981,
+      0.708
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Rear_Bumper_01",
+      "SM_Veh_Sedan_01_Rear_Bumper_01_Exhaust"
+    ]
+  },
+  "Sedan_01/Sedan_01_Rear_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.337,
+      0.994,
+      0.694
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Rear_Bumper_02",
+      "SM_Veh_Sedan_01_Rear_Bumper_02_Exhaust"
+    ]
+  },
+  "Sedan_01/Sedan_01_Rollcage_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.648,
+      2.697,
+      1.255
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Rollcage_01"
+    ]
+  },
+  "Sedan_01/Sedan_01_Roof_Scoop_01": {
+    "ok": true,
+    "size_m_xyz": [
+      0.337,
+      0.435,
+      0.111
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Roof_Scoop_01"
+    ]
+  },
+  "Sedan_01/Sedan_01_Side_Skirts_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.229,
+      2.384,
+      0.178
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Side_Skirts_02"
+    ]
+  },
+  "Sedan_01/Sedan_01_Side_Skirts_03": {
+    "ok": true,
+    "size_m_xyz": [
+      2.355,
+      2.335,
+      0.178
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Side_Skirts_03"
+    ]
+  },
+  "Sedan_01/Sedan_01_Spoiler_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.822,
+      0.431,
+      0.204
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Spoiler_01"
+    ]
+  },
+  "Sedan_01/Sedan_01_Spoiler_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.003,
+      0.281,
+      0.108
+    ],
+    "objects": [
+      "SM_Veh_Sedan_01_Spoiler_02"
+    ]
+  },
+  "Sports_01/Base": {
+    "ok": true,
+    "size_m_xyz": [
+      2.078,
+      4.849,
+      1.433
+    ],
+    "objects": [
+      "SM_Veh_Sports_01",
+      "SM_Veh_Sports_01_Boot_01",
+      "SM_Veh_Sports_01_Door_L",
+      "SM_Veh_Sports_01_Door_L_Glass",
+      "SM_Veh_Sports_01_Door_R",
+      "SM_Veh_Sports_01_Door_R_Glass",
+      "SM_Veh_Sports_01_Engine_01",
+      "SM_Veh_Sports_01_Gear_Stick_01",
+      "SM_Veh_Sports_01_Glass",
+      "SM_Veh_Sports_01_Seats_01",
+      "SM_Veh_Sports_01_Spoiler_01",
+      "SM_Veh_Sports_01_SteeringW",
+      "SM_Veh_Sports_01_Undercarriage_01",
+      "SM_Veh_Sports_01_Wheel_fl",
+      "SM_Veh_Sports_01_Wheel_fr",
+      "SM_Veh_Sports_01_Wheel_rl",
+      "SM_Veh_Sports_01_Wheel_rr"
+    ]
+  },
+  "Sports_01/Sports_01_Bonnet_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.53,
+      1.568,
+      0.311
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Bonnet_01"
+    ]
+  },
+  "Sports_01/Sports_01_Bonnet_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.53,
+      1.568,
+      0.311
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Bonnet_02"
+    ]
+  },
+  "Sports_01/Sports_01_Fenders_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.098,
+      4.152,
+      0.642
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Fenders_02"
+    ]
+  },
+  "Sports_01/Sports_01_Fenders_03": {
+    "ok": true,
+    "size_m_xyz": [
+      2.126,
+      3.692,
+      0.52
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Fenders_03"
+    ]
+  },
+  "Sports_01/Sports_01_Front_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.89,
+      0.803,
+      0.467
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Front_Bumper_01"
+    ]
+  },
+  "Sports_01/Sports_01_Front_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.089,
+      0.848,
+      0.501
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Front_Bumper_02"
+    ]
+  },
+  "Sports_01/Sports_01_Light_Covers_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.809,
+      4.839,
+      0.318
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Light_Covers_01"
+    ]
+  },
+  "Sports_01/Sports_01_Rear_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.784,
+      0.264,
+      0.355
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Rear_Bumper_01"
+    ]
+  },
+  "Sports_01/Sports_01_Rear_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.034,
+      0.827,
+      0.554
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Rear_Bumper_02"
+    ]
+  },
+  "Sports_01/Sports_01_Rollcage_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.479,
+      2.201,
+      1.085
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Rollcage_01"
+    ]
+  },
+  "Sports_01/Sports_01_Roof_Scoop_01": {
+    "ok": true,
+    "size_m_xyz": [
+      0.661,
+      0.517,
+      0.093
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Roof_Scoop_01"
+    ]
+  },
+  "Sports_01/Sports_01_Side_Skirts_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.926,
+      2.122,
+      0.302
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Side_Skirts_01"
+    ]
+  },
+  "Sports_01/Sports_01_Side_Skirts_03": {
+    "ok": true,
+    "size_m_xyz": [
+      1.943,
+      1.952,
+      0.102
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Side_Skirts_03"
+    ]
+  },
+  "Sports_01/Sports_01_Spoiler_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.778,
+      0.448,
+      0.336
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Spoiler_02"
+    ]
+  },
+  "Sports_01/Sports_01_Spoiler_03": {
+    "ok": true,
+    "size_m_xyz": [
+      1.433,
+      0.291,
+      0.138
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Spoiler_03"
+    ]
+  },
+  "Sports_01/Sports_01_Undercarriage_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.783,
+      3.389,
+      0.635
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Undercarriage_02"
+    ]
+  },
+  "Sports_01/Sports_01_Undercarriage_03": {
+    "ok": true,
+    "size_m_xyz": [
+      1.871,
+      3.34,
+      0.434
+    ],
+    "objects": [
+      "SM_Veh_Sports_01_Undercarriage_03"
+    ]
+  },
+  "Hatch_01/Base": {
+    "ok": true,
+    "size_m_xyz": [
+      2.275,
+      4.356,
+      1.684
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01",
+      "SM_Veh_Hatch_01_Boot",
+      "SM_Veh_Hatch_01_Boot_Glass",
+      "SM_Veh_Hatch_01_Door_L",
+      "SM_Veh_Hatch_01_Door_L_Glass_1",
+      "SM_Veh_Hatch_01_Door_L_Glass_2",
+      "SM_Veh_Hatch_01_Door_R",
+      "SM_Veh_Hatch_01_Door_R_Glass_1",
+      "SM_Veh_Hatch_01_Door_R_Glass_2",
+      "SM_Veh_Hatch_01_Engine_01",
+      "SM_Veh_Hatch_01_Glass",
+      "SM_Veh_Hatch_01_Seats_01_Front",
+      "SM_Veh_Hatch_01_Seats_01_Rear",
+      "SM_Veh_Hatch_01_SteeringW",
+      "SM_Veh_Hatch_01_Undercarriage_01",
+      "SM_Veh_Hatch_01_Wheel_fl",
+      "SM_Veh_Hatch_01_Wheel_fr",
+      "SM_Veh_Hatch_01_Wheel_rl",
+      "SM_Veh_Hatch_01_Wheel_rr"
+    ]
+  },
+  "Hatch_01/Hatch_01_Bonnet_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.675,
+      1.284,
+      0.382
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Bonnet_01"
+    ]
+  },
+  "Hatch_01/Hatch_01_Bonnet_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.675,
+      1.284,
+      0.382
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Bonnet_02"
+    ]
+  },
+  "Hatch_01/Hatch_01_Fenders_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.153,
+      3.915,
+      0.798
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Fenders_02"
+    ]
+  },
+  "Hatch_01/Hatch_01_Fenders_03": {
+    "ok": true,
+    "size_m_xyz": [
+      2.158,
+      3.837,
+      0.59
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Fenders_03"
+    ]
+  },
+  "Hatch_01/Hatch_01_Front_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.79,
+      0.552,
+      0.549
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Front_Bumper_01"
+    ]
+  },
+  "Hatch_01/Hatch_01_Front_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.032,
+      0.604,
+      0.549
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Front_Bumper_02"
+    ]
+  },
+  "Hatch_01/Hatch_01_Light_Covers_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.698,
+      4.091,
+      0.538
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Light_Covers_01"
+    ]
+  },
+  "Hatch_01/Hatch_01_Rear_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.849,
+      0.585,
+      0.44
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Rear_Bumper_01",
+      "SM_Veh_Hatch_01_Rear_Bumper_01_Exhaust"
+    ]
+  },
+  "Hatch_01/Hatch_01_Rear_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.018,
+      0.443,
+      0.344
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Rear_Bumper_02",
+      "SM_Veh_Hatch_01_Rear_Bumper_02_Exhaust"
+    ]
+  },
+  "Hatch_01/Hatch_01_Rollcage_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.563,
+      2.624,
+      1.158
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Rollcage_01"
+    ]
+  },
+  "Hatch_01/Hatch_01_Roof_Scoop_01": {
+    "ok": true,
+    "size_m_xyz": [
+      0.641,
+      0.376,
+      0.103
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Roof_Scoop_01"
+    ]
+  },
+  "Hatch_01/Hatch_01_Side_Skirts_03": {
+    "ok": true,
+    "size_m_xyz": [
+      2.118,
+      2.023,
+      0.4
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Side_Skirts_03"
+    ]
+  },
+  "Hatch_01/Hatch_01_Side_Skirts_04": {
+    "ok": true,
+    "size_m_xyz": [
+      2.23,
+      2.288,
+      0.919
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Side_Skirts_04"
+    ]
+  },
+  "Hatch_01/Hatch_01_Spoiler_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.624,
+      0.463,
+      0.263
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Spoiler_02"
+    ]
+  },
+  "Hatch_01/Hatch_01_Spoiler_03": {
+    "ok": true,
+    "size_m_xyz": [
+      1.794,
+      0.47,
+      0.575
+    ],
+    "objects": [
+      "SM_Veh_Hatch_01_Spoiler_03"
+    ]
+  },
+  "Muscle_01/Base": {
+    "ok": true,
+    "size_m_xyz": [
+      2.188,
+      5.679,
+      1.433
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01",
+      "SM_Veh_Muscle_01_Boot",
+      "SM_Veh_Muscle_01_Door_L",
+      "SM_Veh_Muscle_01_Door_L_Glass_1",
+      "SM_Veh_Muscle_01_Door_L_Glass_2",
+      "SM_Veh_Muscle_01_Door_R",
+      "SM_Veh_Muscle_01_Door_R_Glass_1",
+      "SM_Veh_Muscle_01_Door_R_Glass_2",
+      "SM_Veh_Muscle_01_Engine_01",
+      "SM_Veh_Muscle_01_Gear_Stick_01",
+      "SM_Veh_Muscle_01_Seats_01",
+      "SM_Veh_Muscle_01_SteeringW",
+      "SM_Veh_Muscle_01_Undercarriage_01",
+      "SM_Veh_Muscle_01_Wheel_fl",
+      "SM_Veh_Muscle_01_Wheel_fr",
+      "SM_Veh_Muscle_01_Wheel_rl",
+      "SM_Veh_Muscle_01_Wheel_rr"
+    ]
+  },
+  "Muscle_01/Muscle_01_Bonnet_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.495,
+      1.574,
+      0.199
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Bonnet_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Bonnet_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.495,
+      1.602,
+      0.362
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Bonnet_02"
+    ]
+  },
+  "Muscle_01/Muscle_01_Exhaust_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.122,
+      4.367,
+      0.278
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Exhaust_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Exhaust_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.06,
+      4.535,
+      0.24
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Exhaust_02"
+    ]
+  },
+  "Muscle_01/Muscle_01_Fenders_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.334,
+      4.318,
+      0.512
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Fenders_02"
+    ]
+  },
+  "Muscle_01/Muscle_01_Front_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      2.001,
+      0.379,
+      0.587
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Front_Bumper_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Front_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.236,
+      0.747,
+      0.795
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Front_Bumper_02"
+    ]
+  },
+  "Muscle_01/Muscle_01_Light_Covers_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.743,
+      0.054,
+      0.133
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Light_Covers_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Louvers_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.448,
+      0.916,
+      0.437
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Louvers_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Nudge_Bar_01": {
+    "ok": true,
+    "size_m_xyz": [
+      0.889,
+      0.908,
+      0.51
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Nudge_Bar_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Rear_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.987,
+      0.154,
+      0.163
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Rear_Bumper_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Rear_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.252,
+      1.075,
+      0.604
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Rear_Bumper_02"
+    ]
+  },
+  "Muscle_01/Muscle_01_Rollcage_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.857,
+      2.294,
+      1.105
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Rollcage_01"
+    ]
+  },
+  "Muscle_01/Muscle_01_Roof_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.787,
+      3.297,
+      0.502
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Roof_01",
+      "SM_Veh_Muscle_01_Roof_01_Glass"
+    ]
+  },
+  "Muscle_01/Muscle_01_Roof_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.787,
+      2.824,
+      0.503
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Roof_02",
+      "SM_Veh_Muscle_01_Roof_02_Glass"
+    ]
+  },
+  "Muscle_01/Muscle_01_Side_Skirts_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.279,
+      2.467,
+      0.336
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Side_Skirts_02"
+    ]
+  },
+  "Muscle_01/Muscle_01_Spoiler_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.99,
+      0.384,
+      0.281
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Spoiler_02"
+    ]
+  },
+  "Muscle_01/Muscle_01_Spoiler_03": {
+    "ok": true,
+    "size_m_xyz": [
+      1.835,
+      0.592,
+      0.601
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Spoiler_03"
+    ]
+  },
+  "Muscle_01/Muscle_01_Spoiler_Boot_02": {
+    "ok": true,
+    "size_m_xyz": [
+      1.554,
+      0.213,
+      0.139
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Spoiler_02_Boot"
+    ]
+  },
+  "Muscle_01/Muscle_01_Wheelie_Bars_01": {
+    "ok": true,
+    "size_m_xyz": [
+      0.88,
+      1.245,
+      0.815
+    ],
+    "objects": [
+      "SM_Veh_Muscle_01_Wheelie_Bars_01"
+    ]
+  },
+  "shared/Wheel_01": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_01"
+    ]
+  },
+  "shared/Wheel_02": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_02"
+    ]
+  },
+  "shared/Wheel_03": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_03"
+    ]
+  },
+  "shared/Wheel_04": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_04"
+    ]
+  },
+  "shared/Wheel_09": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_09"
+    ]
+  },
+  "shared/Wheel_10": {
+    "ok": true,
+    "size_m_xyz": [
+      0.313,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_10"
+    ]
+  },
+  "shared/Wheel_11": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.602,
+      0.602
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_11"
+    ]
+  },
+  "shared/Wheel_12": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_12"
+    ]
+  },
+  "shared/Wheel_13": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_13"
+    ]
+  },
+  "shared/Wheel_15": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_15"
+    ]
+  },
+  "shared/Wheel_19": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_19"
+    ]
+  },
+  "shared/Wheel_20": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_20"
+    ]
+  },
+  "shared/Wheel_22": {
+    "ok": true,
+    "size_m_xyz": [
+      0.273,
+      0.606,
+      0.606
+    ],
+    "objects": [
+      "SM_Veh_Attach_Wheel_22"
+    ]
+  },
+  "shared/Tyre_01": {
+    "ok": true,
+    "size_m_xyz": [
+      0.262,
+      0.725,
+      0.725
+    ],
+    "objects": [
+      "SM_Veh_Attach_Tyre_01"
+    ]
+  },
+  "shared/Tyre_03": {
+    "ok": true,
+    "size_m_xyz": [
+      0.271,
+      0.899,
+      0.899
+    ],
+    "objects": [
+      "SM_Veh_Attach_Tyre_03"
+    ]
+  },
+  "shared/Tyre_05": {
+    "ok": true,
+    "size_m_xyz": [
+      0.301,
+      0.976,
+      0.976
+    ],
+    "objects": [
+      "SM_Veh_Attach_Tyre_05"
+    ]
+  },
+  "Sports_02/Base": {
+    "ok": true,
+    "size_m_xyz": [
+      2.275,
+      4.356,
+      1.684
+    ],
+    "objects": [
+      "SM_Veh_Sports_02",
+      "SM_Veh_Sports_02_Boot",
+      "SM_Veh_Sports_02_Boot_Glass",
+      "SM_Veh_Sports_02_Door_L",
+      "SM_Veh_Sports_02_Door_L_Glass_1",
+      "SM_Veh_Sports_02_Door_L_Glass_2",
+      "SM_Veh_Sports_02_Door_R",
+      "SM_Veh_Sports_02_Door_R_Glass_1",
+      "SM_Veh_Sports_02_Door_R_Glass_2",
+      "SM_Veh_Sports_02_Engine_01",
+      "SM_Veh_Sports_02_Glass",
+      "SM_Veh_Sports_02_Seats_01_Front",
+      "SM_Veh_Sports_02_Seats_01_Rear",
+      "SM_Veh_Sports_02_SteeringW",
+      "SM_Veh_Sports_02_Undercarriage_01",
+      "SM_Veh_Sports_02_Wheel_fl",
+      "SM_Veh_Sports_02_Wheel_fr",
+      "SM_Veh_Sports_02_Wheel_rl",
+      "SM_Veh_Sports_02_Wheel_rr"
+    ]
+  },
+  "Sports_02/Sports_02_Bonnet_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.675,
+      1.284,
+      0.382
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Bonnet_01"
+    ]
+  },
+  "Sports_02/Sports_02_Fenders_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.153,
+      3.915,
+      0.798
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Fenders_02"
+    ]
+  },
+  "Sports_02/Sports_02_Fenders_03": {
+    "ok": true,
+    "size_m_xyz": [
+      2.158,
+      3.837,
+      0.59
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Fenders_03"
+    ]
+  },
+  "Sports_02/Sports_02_Front_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.79,
+      0.552,
+      0.549
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Front_Bumper_01"
+    ]
+  },
+  "Sports_02/Sports_02_Light_Covers_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.698,
+      4.091,
+      0.538
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Light_Covers_01"
+    ]
+  },
+  "Sports_02/Sports_02_Rear_Bumper_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.849,
+      0.585,
+      0.44
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Rear_Bumper_01",
+      "SM_Veh_Sports_02_Rear_Bumper_01_Exhaust"
+    ]
+  },
+  "Sports_02/Sports_02_Rear_Bumper_02": {
+    "ok": true,
+    "size_m_xyz": [
+      2.018,
+      0.443,
+      0.344
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Rear_Bumper_02",
+      "SM_Veh_Sports_02_Rear_Bumper_02_Exhaust"
+    ]
+  },
+  "Sports_02/Sports_02_Rollcage_01": {
+    "ok": true,
+    "size_m_xyz": [
+      1.563,
+      2.624,
+      1.158
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Rollcage_01"
+    ]
+  },
+  "Sports_02/Sports_02_Side_Skirts_03": {
+    "ok": true,
+    "size_m_xyz": [
+      2.118,
+      2.023,
+      0.4
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Side_Skirts_03"
+    ]
+  },
+  "Sports_02/Sports_02_Side_Skirts_04": {
+    "ok": true,
+    "size_m_xyz": [
+      2.23,
+      2.288,
+      0.919
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Side_Skirts_04"
+    ]
+  },
+  "Sports_02/Sports_02_Spoiler_03": {
+    "ok": true,
+    "size_m_xyz": [
+      1.794,
+      0.47,
+      0.575
+    ],
+    "objects": [
+      "SM_Veh_Sports_02_Spoiler_03"
+    ]
+  }
+}

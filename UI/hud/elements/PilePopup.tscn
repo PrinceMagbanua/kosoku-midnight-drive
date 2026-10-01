@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/hud/elements/pile_popup.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans.ttf" id="2_reg"]
+[ext_resource type="FontFile" path="res://FONT/DroidSans-Bold.ttf" id="3_bold"]
+[ext_resource type="FontFile" uid="uid://cumcxb1fywqol" path="res://FONT/KosokuDisplay/KosokuDisplay-Regular.ttf" id="4_display"]
+
+[sub_resource type="FontVariation" id="FontVariation_track_sm"]
+base_font = ExtResource("4_display")
+spacing_glyph = 1
+
+[node name="PilePopup" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 230.0
+offset_bottom = 40.0
+mouse_filter = 2
+pivot_offset = Vector2(0, 14)
+script = ExtResource("1_script")
+
+[node name="PileValue" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 230.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.341, 0.839, 0.553, 1)
+theme_override_fonts/font = ExtResource("4_display")
+theme_override_font_sizes/font_size = 22
+text = "+1,250"
+
+[node name="PileReason" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 24.0
+offset_right = 230.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.373, 0.478, 0.51, 0.75)
+theme_override_fonts/font = SubResource("FontVariation_track_sm")
+theme_override_font_sizes/font_size = 9
+text = "NEAR MISS  +50  ×2.4"
