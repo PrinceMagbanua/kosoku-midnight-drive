@@ -171,7 +171,7 @@ func _refresh_live() -> void:
 		score_feed.set_live(_live_speed)
 
 ## Opens the dev/settings dropdown that used to hang off the old debug
-## overlay's own gear (graphics/audio/controls/swap car/change scene). That
+## overlay's own gear (graphics/audio/controls). That
 ## overlay is still in the scene - its readouts are hidden, not deleted,
 ## since camera.gd and debug.gd still read from it. Esc still pauses.
 func _on_settings_pressed() -> void:

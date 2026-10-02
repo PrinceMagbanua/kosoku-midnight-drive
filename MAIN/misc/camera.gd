@@ -25,7 +25,7 @@ const SPEED_ZOOM_RATE := 2.5 # how fast it follows the speed (per real second)
 var _speed_zoom := 0.0
 
 # Node references, fetched once instead of every frame. The car is looked up
-# again only when its path changes (the debug menu's car swapper) or the node
+# again only when its path changes or the node
 # goes away - see _target().
 @onready var _orbit: Node3D = $orbit
 @onready var _camera: Camera3D = $orbit/Camera

@@ -99,7 +99,7 @@ func show_health(frac: float) -> void:
 ## One call per frame with the car's state.
 func show_car(rpm: float, rpm_limit: float, mph: float, gear_text: String, abs_on: bool, tcs_on: bool, esp_on: bool, delta: float) -> void:
 	_speed.set_speed(int(mph))
-	# Same range/redline rule as MISC/car swapper (redline = RPMLimit rounded
+	# Range/redline rule (redline = RPMLimit rounded
 	# down to a thousand, dial runs 2000 past it).
 	var redline: float = floorf(rpm_limit / 1000.0) * 1000.0
 	var rpm_range: float = maxf(redline + 2000.0, 1000.0)
