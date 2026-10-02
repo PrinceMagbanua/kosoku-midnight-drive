@@ -155,11 +155,12 @@ static func texture_path(file: String) -> String:
 static func thumb_path(file: String) -> String:
 	return THUMB_DIR + file
 
+## "Kosoku_Veh_Tex_01_Midnight_Volt.png" -> "MIDNIGHT VOLT",
 ## "PolygonStreetRacer_Veh_Tex_11_Flames.png" -> "FLAMES",
 ## "PolygonStreetRacer_Texture_02_B.png" -> "02 B".
 static func paint_label(file: String) -> String:
 	var stem := file.get_basename()
-	for prefix in ["PolygonStreetRacer_Veh_Tex_", "PolygonStreetRacer_Texture_"]:
+	for prefix in ["Kosoku_Veh_Tex_", "PolygonStreetRacer_Veh_Tex_", "PolygonStreetRacer_Texture_"]:
 		if stem.begins_with(prefix):
 			stem = stem.substr(prefix.length())
 	if file.contains("_Veh_Tex_"):
