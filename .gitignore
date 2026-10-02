@@ -7,3 +7,5 @@ exports/
 
 # Local tooling
 .claude/
+
+__pycache__/
