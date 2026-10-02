@@ -1,9 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://b77dj0608nvq0"]
+[gd_scene load_steps=14 format=3 uid="uid://b77dj0608nvq0"]
 
-[ext_resource type="Texture2D" uid="uid://b315i7ikjj32c" path="res://logo.png" id="2"]
 [ext_resource type="Script" path="res://MISC/misc scripts/debug.gd" id="3"]
 [ext_resource type="Script" path="res://MISC/graphics_config/graphics config.gd" id="5"]
-[ext_resource type="Script" path="res://MISC/misc scripts/show_info.gd" id="6"]
 [ext_resource type="Script" path="res://MISC/controls config/slider_variables.gd" id="7"]
 [ext_resource type="FontFile" uid="uid://btyvoi7jkhec0" path="res://FONT/DroidSans.ttf" id="7_coiix"]
 [ext_resource type="Script" path="res://MISC/controls config/run.gd" id="8"]
@@ -840,144 +838,6 @@ theme_type_variation = &"BackButton"
 text = "X"
 script = ExtResource("18_closebtn")
 
-[node name="inform" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-anchor_left = 0.102539
-anchor_top = 0.12
-anchor_right = 0.897461
-anchor_bottom = 0.881667
-script = ExtResource("6")
-
-[node name="background" type="Panel" parent="inform"]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme_type_variation = &"MenuBackdrop"
-
-[node name="scroll" type="ScrollContainer" parent="inform"]
-layout_mode = 0
-anchor_left = 0.41769
-anchor_top = 0.0525164
-anchor_right = 0.974202
-anchor_bottom = 0.947484
-
-[node name="container" type="VBoxContainer" parent="inform/scroll"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="clabel" type="Label" parent="inform/scroll/container"]
-layout_mode = 2
-mouse_filter = 1
-text = "--------------------------------------------------
-(?) Car Controls:
---------------------------------------------------"
-horizontal_alignment = 1
-clip_text = true
-
-[node name="c" type="Label" parent="inform/scroll/container"]
-layout_mode = 2
-text = "Keyboard Steering:
-W/Up = Accelerator
-S/Down = Brake
-A/Left = Steer Left
-D/Right = Steer Right
-K/Shift = Clutch
-E/P = Shift Up
-Q/L = Shift Down
-Space/Ctrl = Handbrake
-
-Mouse Steering:
-LMB = Accelerator
-RMB = Brake
-Cursor (Horizontal Axis Only) = Steer
-W = Clutch
-E = Shift Up
-Q = Shift Down
-Shift = Handbrake
-
-Gamepad:
-NOT CONFIGURED
-
-Joystick:
-NOT CONFIGURED
-
-Steering Wheel:
-UNSUPPORTED BY GODOT"
-clip_text = true
-
-[node name="clabel2" type="Label" parent="inform/scroll/container"]
-layout_mode = 2
-mouse_filter = 1
-text = "--------------------------------------------------
-(?) Misc Controls:
---------------------------------------------------"
-horizontal_alignment = 1
-clip_text = true
-
-[node name="c2" type="Label" parent="inform/scroll/container"]
-layout_mode = 2
-text = "F11 = Toggle Fullscreen
-Esc = Close All Panels
-, = Pan Camera Left
-. = Pan Camera Right
-I = Zoom In
-O = Zoom Out
-/ = Reset Camera
-F = Toggle Forces Visualisation"
-clip_text = true
-
-[node name="credlabel" type="Label" parent="inform/scroll/container"]
-layout_mode = 2
-text = "--------------------------------------------------
-Credits/Sources:
---------------------------------------------------"
-horizontal_alignment = 1
-clip_text = true
-
-[node name="cred" type="Label" parent="inform/scroll/container"]
-custom_minimum_size = Vector2(55, 371)
-layout_mode = 2
-text = "Contributors:
-devHrytsan
-r0401 (aka raghid) - Godot 4 Port
-
-Car Designers:
-shotman_16 - Eclipse SRC
-
-All vehicles are fictional. Any resemblance to existing counterparts and names are purely coincidental."
-autowrap_mode = 2
-clip_text = true
-
-[node name="watermark" type="TextureRect" parent="inform"]
-layout_mode = 0
-anchor_left = 0.02457
-anchor_top = 0.02407
-anchor_right = 0.398
-anchor_bottom = 0.319
-texture = ExtResource("2")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="clabel" type="Label" parent="inform"]
-layout_mode = 0
-anchor_left = 0.0651106
-anchor_top = 0.319475
-anchor_right = 0.379607
-anchor_bottom = 0.363238
-mouse_filter = 1
-text = "Powered by Godot"
-horizontal_alignment = 1
-
-[node name="CloseButton" type="Button" parent="inform"]
-layout_mode = 0
-anchor_left = 0.92
-anchor_right = 1.0
-anchor_bottom = 0.06
-theme_type_variation = &"BackButton"
-text = "X"
-script = ExtResource("18_closebtn")
-
 [node name="graphics config" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -1478,14 +1338,6 @@ anchor_right = 0.609375
 anchor_bottom = 0.08
 text = "graphics config"
 
-[node name="info" type="Button" parent="."]
-visible = false
-layout_mode = 0
-anchor_left = 0.325195
-anchor_right = 0.444336
-anchor_bottom = 0.08
-text = "information"
-
 [node name="MenuGear" type="Button" parent="."]
 visible = false
 layout_mode = 0
@@ -1514,11 +1366,6 @@ script = ExtResource("17_mainmenu")
 [node name="VBox" type="VBoxContainer" parent="MenuList"]
 layout_mode = 2
 
-[node name="Information" type="Button" parent="MenuList/VBox"]
-layout_mode = 2
-theme_type_variation = &"NavItemCompactButton"
-text = "Information"
-
 [node name="GraphicsConfig" type="Button" parent="MenuList/VBox"]
 layout_mode = 2
 theme_type_variation = &"NavItemCompactButton"
@@ -1536,11 +1383,9 @@ text = "Control Config"
 
 [connection signal="pressed" from="fix engine" to="." method="engine_restart"]
 [connection signal="pressed" from="MenuGear" to="MenuList" method="_on_gear_pressed"]
-[connection signal="pressed" from="MenuList/VBox/Information" to="inform" method="_on_info_pressed"]
 [connection signal="pressed" from="MenuList/VBox/GraphicsConfig" to="graphics config" method="_on_Button_pressed"]
 [connection signal="pressed" from="MenuList/VBox/ControlConfig" to="controls manipulator" method="_on_Button_pressed"]
 [connection signal="pressed" from="MenuList/VBox/AudioConfig" to="audio config" method="_on_Button_pressed"]
-[connection signal="pressed" from="MenuList/VBox/Information" to="MenuList" method="_on_item_pressed"]
 [connection signal="pressed" from="MenuList/VBox/GraphicsConfig" to="MenuList" method="_on_item_pressed"]
 [connection signal="pressed" from="MenuList/VBox/ControlConfig" to="MenuList" method="_on_item_pressed"]
 [connection signal="pressed" from="MenuList/VBox/AudioConfig" to="MenuList" method="_on_item_pressed"]

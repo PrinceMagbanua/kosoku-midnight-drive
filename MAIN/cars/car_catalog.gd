@@ -5,8 +5,8 @@ extends RefCounted
 ## UpgradeCatalog). Each car is a CarProfile .tres in MAIN/cars/profiles/,
 ## editable directly in the Godot inspector. The garage offers the five
 ## modular (customizable) cars (sports_02 is the AE86, built on Hatch_01's part set);
-## coupe/italia/kamaro .tres are kept on
-## disk but no longer listed. The coupe is still the physics reference: its
+## coupe.tres is kept on disk but no longer
+## listed. The coupe is still the physics reference: its
 ## authored 5/5/5/5 config is the baseline CarStats measures from, and base
 ## car.tscn is built around its hull (see CarConfigurator). To add a car,
 ## duplicate a .tres, set its id/hull_scene/manifest_id/stats, and add it to
